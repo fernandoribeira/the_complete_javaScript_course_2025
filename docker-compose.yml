@@ -1,0 +1,11 @@
+services:
+    nodejs:
+        image: node:lts-slim
+        container_name: nodejs
+        working_dir: /projetos
+        volumes:
+            - .:/projetos
+        ports:
+            - "3000:3000"
+        command: tail -f /dev/null
+        restart: unless-stopped

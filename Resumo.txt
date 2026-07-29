@@ -1,0 +1,2312 @@
+Seção 01
+    Aula 001 - OK
+    Aula 002 - OK
+    Aula 003 - OK
+    Aula 004 - OK
+Seção 02
+    Aula 005 - OK
+    Aula 006 - OK
+    Aula 007 - OK
+    Aula 008 - OK
+    Aula 009 - OK
+    Aula 010 - OK
+    Aula 011 - OK
+    Aula 012 - OK
+    Aula 013 - OK
+    Aula 014 - OK
+    Aula 015 - OK
+    Aula 016 - OK
+    Aula 017 - OK
+    Aula 018 - OK
+    Aula 019 - OK
+    Aula 020 - OK
+    Aula 021 - OK
+    Aula 022 - OK
+    Aula 023 - OK
+    Aula 024 - OK
+    Aula 025 - OK
+    Aula 026 - OK
+    Aula 027 - OK
+    Aula 028 - OK
+    Aula 029 - OK
+    Aula 030 - OK
+    Aula 031 - OK
+Seção 03
+    Aula 032 - OK
+    Aula 033 - OK
+    Aula 034 - OK
+    Aula 035 - OK
+    Aula 036 - OK
+    Aula 037 - OK
+    Aula 038 - OK
+    Aula 039 - OK
+    Aula 040 - OK
+    Aula 041 - OK
+    Aula 042 - OK
+    Aula 043 - OK
+    Aula 044 - OK
+    Aula 045 - OK
+    Aula 046 - OK
+    Aula 047 - OK
+    Aula 048 - OK
+    Aula 049 - OK
+    Aula 050 - OK
+    Aula 051 - OK
+    Aula 052 - OK
+Seção 04
+    Aula 053 - OK
+    Aula 054 - OK
+Seção 05
+    Aula 055 - OK
+    Aula 056 - OK
+    Aula 057 - OK
+    Aula 058 - OK
+    Aula 059 - OK
+    Aula 060 - OK
+    Aula 061 - OK
+    Aula 062 - OK
+    Aula 063 - OK
+    Aula 064 - OK
+    Aula 065 - OK
+    Aula 066 - OK
+Seção 06
+    Aula 067 - OK
+    Aula 068 - OK
+    Aula 069 - OK
+    Aula 070 - OK
+    Aula 071 - 
+Seção 07
+Seção 08
+Seção 09
+Seção 10
+Seção 11
+Seção 12
+Seção 13
+Seção 14
+Seção 15
+Seção 16
+Seção 17
+Seção 18
+Seção 19
+Seção 20
+Seção 21
+
+---------------------------------------------------------------
+
+- Configurações VSCode
+
+    Mudar idioma
+
+        Pressione Ctrl + Shift + P
+        Digite "Configure Display Language"
+        Selecione "Configure Display Language"
+        Selecione o idioma "português (Brasil)"
+
+    Extensions
+
+        Auto Close Tag
+        Auto Rename Tag
+        Color Highlight
+        Image Preview
+        Prettier - Code formatter
+        Live Server
+        vscode-pdf
+
+    Settings
+
+        Auto Save set to "onFocusChange"
+        Default Formatter set to "Prettier - Code formatter (esbnp.prettier-vscode)" para "Editor" e "Notebook"
+        Format on Save set to "true"
+        Word Wrap set to "on"
+        Tab Size set to "4"
+        Tab Width set to "4"
+        Multi Cursor Modifier set to "ctrlCmd"
+        Editor: Font Size set to "16"
+        Debug > Console: Font Size set to "16"
+        Terminal > Integrated: Font Size set to "16"
+        Markdown > Preview: Font Size set to "16"
+
+- Como criar um documento HTML básico no VSCode
+
+    html:5 + Enter
+
+- Carregar código JavaScript embutido no HTML
+
+    Inserir a tag abaixo no arquivo HTML antes do fechamento da tag <body> e dentro dela o código JavaScript.
+
+    <script>
+        ...
+    </script>
+
+- Carregar código JavaScript separado do HTML
+
+    Criar um arquivo com extensão .js separado e adicionar a tag abaixo no arquivo HTML indicando seu nome e caminho antes do fechamento da tag <body>.
+
+    <scrip src="script.js"></script>
+
+- Escrevendo no console
+
+    O comando console.log() é uma função do JavaScript usada para exibir informações no console do navegador, sendo muito útil para depuração e acompanhamento da execução do código.
+
+    Exemplo:
+
+    console.log("Olá mundo");
+
+    Para contatenar informações utilizamos a virgula "," ou o simbolo de soma "+".
+
+    A "," aplica um espaço entre as informações ja o "+" não aplica, sendo necessario aplicar um espaço manualmente entre as informações.
+
+    Exemplo:
+
+    console.log("Olá", "mundo");
+
+    console.log("Olá" + " " + "mundo");
+
+- Uso de aspas duplas
+
+    Utilizada para criar campos de texto chamdos "strings", por padrão é utilizada a aspas duplas cercando o texto conforme exemplo abaixo:
+
+    const nome = "Fernando";
+
+- Uso de ponto e virgula
+
+    O ponto e vírgula indica o fim de uma instrução, exmeplo:
+
+    let a = 10;
+
+- Palavras reservadas
+
+    São palavras que pertencem à linguagem, elas possuem significado próprio e não podem ser usadas como identificadores de nenhum tipo, por exemplo as palavras abaixo:
+
+    if
+    new
+    let
+
+- Variaveis e constantes
+
+    Uma variável é um espaço na memória utilizado para armazenar um valor.
+
+    Declaração
+
+        let - Forma moderna e recomendada quando o valor pode mudar, pode ser declarada vazia.
+        const - Usada quando o valor não pode mudar (tipos comuns), obrigatoriamente tem de ser atribuido um valor ao ser declarada
+
+    Convenção de nomes
+
+        Não pode começar com número
+        Não pode conter espaços
+        Não pode usar palavras reservadas
+        Pode usar letras, números, _ e $
+        Usar padrão "camelCase", primeira palavra minúscula, próximas com inicial maiúscula.
+        Constantes devem ter todas a letras em maiúsculo quando o valor é realmente fixo e imutável, algo que representa uma constante "global" ou  de configuração porem pode ser escita como variavel comum em casos comuns
+
+    Observações importantes:
+
+        const é a forma recomendada por padrão para declarar quaisquer tipo de variáveis atualmente
+        const não torna o valor imutável para objetos / arrays, apenas impede a reatribuição da variável
+
+    Exemplos:
+
+        let idade = 20;
+        const nome = "Fernando";
+        const PI = 3.1415;
+
+- Tipagem dinamica
+
+    JavaScript é uma linguagem de tipagem dinâmica, ou seja:
+
+    Você não define o tipo da variável
+    O tipo é definido automaticamente pelo valor atribuído
+    Uma variável pode mudar de tipo durante a execução
+
+- Tipos de valores
+
+    Os valores são divididos em duas grandes categorias: tipos primitivos e objetos.
+
+    Tipos primitivos são valores simples, guardando apenas uma informação, por exemplo:
+
+        const nome = "Maria";
+        const idade = 25;
+
+    Objetos armazenam coleções de dados e podem conter propriedades e métodos, guardando diversas informações, por exemplo:
+
+        const pessoa = {
+            nome: "Maria",
+            idade: 25,
+            falar() {
+                console.log("Olá!");
+            }
+        };
+
+- Tipos de dados
+
+    number - Representa números inteiros e decimais
+    string - Texto entre aspas simples, duplas ou crase
+    boolean - Valores lógicos
+    undefined - Variável declarada, mas sem valor atribuído
+    null - Representa ausência intencional de valor
+    symbol - Usado para criar identificadores únicos (mais avançado)
+    bigint - Números inteiros muito grandes (com a letra "n" no final do numero)
+    object - Usado para agrupar dados e funcionalidades em uma única estrutura, ele representa coleções de pares chave > valor
+
+- Comentários
+
+    Comentário de uma linha:
+
+    // Isso é um comentário
+
+    Comentário de múltiplas linhas:
+
+    /*
+    Comentário
+    com várias linhas
+    */
+
+- Operador "typeof"
+
+    O operador typeof é usado para verificar o tipo de um valor ou variável.
+
+    Exemplo:
+
+    typeof 10;           // "number"
+    typeof "texto";      // "string"
+
+- Operadores
+
+    Aritméticos
+
+        Usados para realizar cálculos matemáticos:
+
+        +  adição
+        -  subtração
+        *  multiplicação
+        /  divisão
+        %  resto da divisão (módulo)
+        ** exponenciação
+
+    Atribuição
+
+        Usados para atribuir valores a variáveis:
+
+        =   atribuição simples
+        +=  soma e atribui
+        -=  subtrai e atribui
+        *=  multiplica e atribui
+        /=  divide e atribui
+        %=  módulo e atribui
+        **= exponencia e atribui
+
+    Incrementais / Decrementais
+
+        Servem para aumentar ou diminuir valores em 1:
+
+        ++ incremento
+        -- decremento
+
+        Temos pré-incremento / pré-decremento:
+
+        let i = 5;
+        ++i; // i = 6
+
+        Temos pós-incremento / pós-decremento:
+
+        let j = 5;
+        j++; // j = 6 (mas retorna 5 antes de incrementar)
+
+        Diferença importante:
+
+        pré: altera antes de usar
+        pós: usa o valor e depois altera
+
+    Comparadores
+
+        Usados para comparar valores. Sempre retornam true ou false.
+
+        ==  igual (com conversão de tipo)
+        === igual estrito (sem conversão)
+        !=  diferente
+        !== diferente estrito
+        >   maior
+        <   menor
+        >=  maior ou igual
+        <=  menor ou igual
+
+- Ordem dos Operadores
+
+    A ordem define quais operações são executadas primeiro.
+
+    Ordem simplificada (do maior para o menor):
+
+    ()             parênteses
+    **             exponenciação
+    ++ --          incremento / decremento
+    * / %          multiplicação, divisão, módulo
+    + -            adição e subtração  
+    < <= > >=      comparações
+    == != === !==  igualdade
+    && AND         lógico
+    || OR          lógico
+    = += -= *= ... atribuição
+
+- Template literals
+
+    Template literals são uma forma mais moderna e poderosa de trabalhar com strings no JavaScript. Eles foram introduzidos no ES6 e usam crases (`) em vez de aspas simples ou duplas.
+
+    Principais características
+
+    Interpolação de variáveis: Com template literals, você pode inserir variáveis e expressões diretamente dentro da string usando ${ }.
+
+    Exemplo:
+
+    const nome = "Fernando";
+    const idade = 17;
+    const mensagem = `Meu nome é ${nome} e tenho ${idade} anos.`;
+
+    Sem template literals, seria necessário concatenar com +, o que fica menos legível.
+
+    Expressões dentro da string: Não é só variável que funciona. Qualquer expressão JavaScript pode ser usada.
+
+    Exemplo:
+
+    const a = 10;
+    const b = 5;
+    const resultado = `A soma é ${a + b}`;
+
+    Strings multilinha: Template literals permitem quebrar linhas sem usar \n.
+
+    Exemplo:
+
+    const texto = `Linha 1
+    Linha 2
+    Linha 3`;
+
+- Estruturas de decisão
+
+    As estruturas de decisão permitem que o código escolha caminhos diferentes com base em condições (verdadeiro ou falso).
+
+    if
+
+        O if executa um bloco de código somente se a condição for verdadeira.
+
+        Exemplo:
+        let idade = 18;
+        if (idade >= 18) {
+            console.log("Maior de idade");
+        }
+
+        Se a condição for falsa, o código dentro do if simplesmente não é executado.
+
+    if else
+
+        O if else permite definir o que acontece quando a condição é verdadeira e o que acontece quando é falsa.
+
+        Exemplo:
+        let idade = 16;
+        if (idade >= 18) {
+            console.log("Maior de idade");
+        } else {
+            console.log("Menor de idade");
+        }
+
+        Aqui sempre um dos dois blocos será executado.
+
+    if else if
+
+        Usado quando há várias condições possíveis. O JavaScript testa as condições em ordem, e executa o primeiro bloco verdadeiro.
+
+        Exemplo:
+        let nota = 7;
+        if (nota >= 9) {
+            console.log("Excelente");
+        } else if (nota >= 7) {
+            console.log("Aprovado");
+        } else if (nota >= 5) {
+            console.log("Recuperação");
+        } else {
+            console.log("Reprovado");
+        }
+
+    switch
+
+        Usada quando você precisa comparar o valor de uma variável (ou expressão) com vários valores possíveis. Ele costuma ser uma alternativa mais organizada ao uso de vários if / else if.
+
+        O switch avalia uma expressão uma única vez e compara o resultado com cada case. Quando encontra um case correspondente, executa o código daquele bloco.
+
+        Sintaxe básica:
+
+        switch (expressao) {
+            case valor1:
+                // código se expressao === valor1
+                break;
+            case valor2:
+                // código se expressao === valor2
+                break;
+            default:
+                // código se nenhum case for atendido
+        }
+
+        Exemplo:
+        let dia = 3;
+        switch (dia) {
+            case 1:
+                console.log("Domingo");
+                break;
+            case 2:
+                console.log("Segunda");
+                break;
+            case 3:
+                console.log("Terça");
+                break;
+            default:
+                console.log("Dia inválido");
+        }
+
+        Informações importantes:
+
+        break: o break é essencial na maioria dos casos. Sem ele, o JavaScript continua executando os próximos cases, mesmo que eles não correspondam.
+
+        default: o default funciona como o else final. Ele é executado quando nenhum case corresponde ao valor testado.
+
+        Comparação usada no switch: switch usa comparação estrita (===). Isso significa que tipo e valor precisam ser iguais.
+
+    Operador ternário "?"
+
+        É um operador condicional que funciona como uma forma curta do if/else. Ele é chamado de ternário porque trabalha com três partes.
+
+        Sintaxe:
+
+        condicao ? valorSeVerdadeiro : valorSeFalso
+
+        Se a condição for verdadeira, o operador retorna o primeiro valor. Se for falsa, retorna o segundo.
+
+        Exemplo:
+
+        let idade = 20;
+        let resultado = idade >= 18 ? "Maior de idade" : "Menor de idade";
+
+- Conversão de Tipos (explicita)
+
+    Conversão de tipos acontece quando você força explicitamente um valor de um tipo a virar outro tipo. É previsível e controlada.
+
+    Conversão para Number
+
+    Formas comuns:
+
+    Number(valor) - Converte para número ou retorna NaN se não for possível.
+    Exemplo:
+    Number("10") // 10
+
+    parseInt(valor) - Converte para inteiro e ignora o resto após encontrar algo inválido.
+    Exemplo:
+    parseInt("10.9") // 10
+
+    parseFloat(valor) - Converte para número decimal.
+    Exemplo:
+    parseFloat("10.5") // 10.5
+
+    Conversão para String
+
+    Formas comuns:
+
+    String(valor)
+    Exemplos:
+    String(123) // "123"
+
+    valor.toString()
+    Exemplos:
+    (123).toString() // "123"
+
+    Conversão para Boolean
+
+    Existe somente uma forma:
+
+    Boolean(valor)
+    Exemplos:
+    Boolean(0) // false
+    Boolean("0") // true
+
+    Valores convertidos para false:
+
+    false
+    0
+    -0
+    0n
+    ""
+    null
+    undefined
+    NaN
+
+    Todos os outros valores são true.
+
+- Coerção de Tipos (implicita)
+
+    Coerção ocorre quando o JavaScript converte tipos automaticamente durante operações.
+
+    Coerção com operador +
+
+    O operador + é especial, se algum operando for string faz concatenação, caso contrário é feita soma numérica.
+
+    Exemplos:
+    "5" + 2 // "52"
+    2 + "5" // "25"
+    "5" + true // "5true"
+    "5" + null // "5null"
+    2 + 2 + "5" // "45"
+    "5" + 2 + 2 // "522"
+
+    A ordem importa muito, a mesma é feita da esquerda para a direita.
+
+    Coerção com operadores matemáticos (-, *, /, %)
+
+    Esses operadores sempre tentam converter para Number.
+
+    Exemplos:
+    "5" - 2 // 3
+    "5" * "2" // 10
+    "10" / "2" // 5
+    "5" % 2 // 1
+
+- Valores "truthy" e "falsy"
+
+    Qualquer valor pode ser interpretado como verdadeiro (true) ou falso (false) quando usado em contextos lógicos, como if, while, operadores lógicos (&&, ||, !) etc. Esses valores são chamados de "truthy" e "falsy".
+
+    Valores "falsy"
+
+        Falsy são os valores que, quando convertidos para boolean, resultam em false.
+
+        Em JavaScript, existem apenas 7 valores "falsy":
+
+        false
+        0
+        -0
+        0n        (BigInt zero)
+        "" ou ''  (string vazia)
+        null
+        undefined
+        NaN
+
+        Exemplos:
+        if (false) { }        // não executa
+        if (0) { }            // não executa
+        if ("") { }           // não executa
+        if (null) { }         // não executa
+        if (NaN) { }          // não executa
+
+        Qualquer um desses valores dentro de um if será tratado como false.
+
+    Valores "truthy"
+
+        Truthy são todos os outros valores que não estão na lista de falsy. Ou seja, se não é falsy, é truthy.
+
+        Exemplos comuns de valores truthy:
+
+        true
+        1
+        -1
+        "0"
+        "false"
+        " "        (string com espaço)
+        []         (array vazio)
+        {}         (objeto vazio)
+        function() {}
+
+        Exemplos:
+        if (true) { }         // executa
+        if (1) { }            // executa
+        if ("0") { }          // executa
+        if ([]) { }           // executa
+        if ({}) { }           // executa
+
+- Operadores de igualdade
+
+    Operadores de igualdade servem para comparar valores. O ponto mais importante é entender a diferença entre comparar "só o valor" e comparar "valor + tipo".
+
+    Operador == (igualdade solta)
+
+        O == compara apenas o valor, não o tipo. Se os tipos forem diferentes, o JavaScript tenta converter (coerção de tipo) antes de comparar.
+
+        Exemplos:
+        5 == 5            > true
+        5 == "5"          > true
+        0 == false        > true
+        null == undefined > true
+
+        Isso acontece porque o JavaScript converte os valores para tentar deixá-los do mesmo tipo antes da comparação.
+
+        Esse comportamento pode causar confusão e erros difíceis de perceber.
+
+    Operador === (igualdade estrita)
+
+        O === compara o valor e o tipo ao mesmo tempo. Não existe conversão de tipos.
+
+        Exemplos:
+        5 === 5            > true
+        5 === "5"          > false
+        0 === false        > false
+        null === undefined > false
+
+        Esse é o operador recomendado na maioria dos casos, porque o resultado é previsível.
+
+    Operador != (diferença solta)
+
+        O != é o oposto do ==. Ele verifica se os valores são diferentes, permitindo coerção de tipo.
+
+        Exemplos:
+        5 != 6        > true
+        5 != "5"      > false
+        0 != false    > false
+
+        Assim como o ==, ele pode gerar resultados inesperados.
+
+    Operador !== (diferença estrita)
+
+        O !== é o oposto do ===. Ele verifica se o valor ou o tipo são diferentes, sem conversão.
+
+        Exemplos:
+        5 !== 6        > true
+        5 !== "5"      > true
+        0 !== false    > true
+
+- Operadores logicos
+
+    São usados para combinar ou inverter condições. Eles trabalham muito com valores booleanos, mas em JavaScript também retornam valores não booleanos, o que é algo importante de entender.
+
+    Principais: &&, || e !
+
+    Operador && (E lógico)
+
+    O && retorna verdadeiro se todas as condições forem verdadeiras.
+
+    Exemplo básico:
+    true && true   > true
+    true && false  > false
+
+    Operador || (OU lógico)
+
+    O || retorna verdadeiro se pelo menos uma condição for verdadeira.
+
+    Exemplo básico:
+    true || false   > true
+    false || false  > false
+
+    Operador ! (NÃO lógico)
+
+    O ! inverte o valor lógico.
+
+    Exemplos:
+    !true   > false
+    !false  > true
+
+- Declarações e expressões
+
+    São dois conceitos fundamentais que definem como o código é escrito e executado. A diferença principal é que expressões produzem um valor, enquanto declarações executam uma ação.
+
+    Declarações (statements)
+
+        Declarações são instruções completas que dizem ao JavaScript para fazer algo. Elas não retornam um valor que possa ser usado diretamente.
+
+        Exemplos:
+
+        Declaração de variável
+        let idade = 18;
+
+        Declarações de controle de fluxo
+        if (idade >= 18) {
+            console.log("Maior de idade");
+        }
+
+        Observação: Você não pode usar uma declaração onde o JavaScript espera um valor.
+
+    Expressões (expressions)
+
+        Expressões são trechos de código que sempre resultam em um valor. Esse valor pode ser usado, atribuído a uma variável, passado como parâmetro, etc.
+
+        Exemplos:
+
+        Expressões literais
+        10
+        "texto"
+
+        Expressões aritméticas
+        5 + 3
+        10 * 2
+
+        Expressões de comparação
+        idade >= 18
+        a === b
+
+        Expressões de atribuição
+        x = 10
+        y += 2
+
+        Expressões lógicas
+        a && b
+        a || b
+
+- Strict mode
+
+    É um modo especial de execução que torna a linguagem mais rígida e segura, ajudando a evitar erros comuns e más práticas.
+
+    Ele foi criado para:
+
+    Evitar bugs silenciosos
+    Impedir comportamentos perigosos
+    Forçar um código mais previsível
+
+    Você ativa o strict mode usando a string abaixo. Ela deve ser usada no topo do arquivo javascript:
+
+    "use strict";
+
+    O que o strict mode muda na prática
+
+    Proíbe variáveis não declaradas
+    Impede duplicação de parâmetros
+    Proíbe apagar variáveis, funções ou parâmetros
+    Impede o uso de palavras reservadas futuras
+    Corrige erros silenciosos
+    Algumas operações que antes falhavam silenciosamente passam a gerar erro
+
+- Funções
+
+    São blocos de código reutilizáveis que servem para executar uma tarefa ou calcular e retornar um valor. Elas são um dos conceitos mais importantes da linguagem.
+
+    Em vez de repetir o mesmo código várias vezes, você coloca esse código dentro de uma função e a reutiliza sempre que precisar.
+
+    Uma função é um conjunto de instruções que:
+
+        Pode receber dados de entrada (parâmetros)
+        Executa um bloco de código
+        Pode ou não retornar um valor
+
+    Exemplo simples de ideia:
+
+        Some dois números > isso vira uma função.
+
+    Temos basicamente 3 formatos de declaração de funções:
+
+        Função tradicional (Function Declaration)
+        Expressão de função (Function Expression)
+        Função seta (Arrow function)
+
+    Diferença nos 3 formatos de declaração de funções:
+
+        Função tradicional (Function Declaration):
+
+            Possui um nome obrigatório.
+            Pode ser chamada antes de ser declarada (hoisting).
+            Ideal para funções principais do programa.
+
+        Expressão de função (Function Expression):
+
+            Armazenada em variável.
+            Passada para outra função.
+            Retornada por outra função.
+            Não pode ser chamada antes de ser declarada (hoisting).
+            Muito comum quando a função será usada como um valor.
+
+        Função seta (Arrow function):
+
+            É uma forma mais curta de escrever funções.
+            A grande diferença é o "this".
+            A Arrow Function não cria seu próprio this. Ela usa o this do contexto onde foi criada (escopo léxico). Por isso, não é indicada para métodos de objetos.
+
+    Vantagens e desvantagens
+
+        Function Declaration
+            Vantagens: Pode ser chamada antes da declaração (hoisting), ótima para funções principais
+            Desvantagens: Sintaxe mais longa
+
+        Function Expression
+            Vantagens: Trata a função como um valor, ótima para callbacks e atribuições
+            Desvantagens: Não possui hoisting
+
+        Arrow Function
+            Vantagens: Sintaxe curta, muito usada com map, filter, reduce e callbacks
+            Desvantagens: Não possui this próprio e não deve ser usada como método de objeto
+
+    Função tradicional (Function Declaration)
+
+        A função é declarada de forma separada, com nome, e chamada quando necessária.
+
+        Declaração:
+
+            function <nome da função>(<parametro 1>, <parametro 2>, <demais parametros...>) {
+                <codigo da função>
+                return <valor a ser retornado pela função>
+            }
+
+        Chamada:
+
+            <nome da funcao>(<parametro 1>, <parametro 2>, <demais parametros...>);
+
+        Exemplos:
+
+            function logger() {
+                console.log("Teste");
+            }
+
+            function idade(anoAtual, anoNascimento) {
+                let idade = anoAtual - anoNascimento;
+                return idade;
+            }
+
+            logger();
+
+            idade(2025, 1979);
+
+    Expressão de função (Function Expression)
+
+        A função é declarada sem nome e atribuida a uma variavel, para ser usada é necessario declarar esta variavel.
+
+        Declaração:
+
+            const <nome da variavel> = function(<parametro 1>, <parametro 2>, <demais parametros...>) {
+                <codigo da função>
+                return <valor a ser retornado pela função>
+            }
+
+        Chamada:
+
+            <nome da variavel>(<parametro 1>, <parametro 2>, <demais parametros...>);
+
+        Exemplos:
+
+            const logger = function() {
+                console.log("Teste");
+            }
+
+            const idade = function(anoAtual, anoNascimento) {
+                let idade = anoAtual - anoNascimento;
+                return idade;
+            }
+
+            logger();
+
+            idade(2025, 1979);
+
+    Função seta (Arrow function)
+
+        A função é declarada sem nome e atribuida a uma variavel, para ser usada é necessario declarar esta variavel. Porem é uma forma mais curta e moderna de escrever funções pois não leva a palavra function.
+
+        Declaração:
+
+            const <nome da variavel> = (<parametro 1>, <parametro 2>, <demais parametros...>) => {
+                <codigo da função>
+                return <valor a ser retornado pela função>
+            }
+
+        Chamada:
+
+            <nome da variavel>(<parametro 1>, <parametro 2>, <demais parametros...>);
+
+        Exemplos:
+
+            const logger = () => {
+                console.log("Teste");
+            }
+
+            const idade = (anoAtual, anoNascimento) => {
+                let idade = anoAtual - anoNascimento;
+                return idade;
+            }
+
+            logger();
+
+            idade(2025, 1979);
+
+- Arrays
+
+    São estruturas de dados usadas para armazenar vários valores em uma única variável, organizados por índice numérico. Eles são fundamentais para trabalhar com listas de dados.
+
+    Características importantes
+
+        Cada elemento tem um índice (posição)
+        O índice começa em 0
+        Pode armazenar qualquer tipo de dado
+        Pode misturar tipos diferentes (número, string, objeto, função, etc.)
+        O tamanho pode mudar dinamicamente
+
+    Declaração
+
+        Forma literal (mais comum)
+
+            // Vazio
+            let <nome do array> = [];
+
+            // Com itens
+            let <nome do array> = [<item>, <item>, ...];
+
+            Exemplos:
+
+            let frutas = [];
+            let frutas = ["maçã", "banana", "laranja"];
+
+            É a forma recomendada por ser mais simples e clara.
+
+        Usando o construtor Array
+
+            // Vazio
+            let <nome do array> = new Array();
+
+            // Com itens
+            let <nome do array> = new Array(<item>, <item>, ...);
+
+            Exemplos:
+
+            let frutas = new Array();
+            let frutas = new Array("maçã", "banana", "laranja");
+
+            Funciona, mas é menos usada.
+
+    Arrays podem misturar tipos
+
+        let dados = [1, "texto", true, { nome: "Ana" }, function() {}];
+
+        Isso é permitido em JavaScript.
+
+     Tamanho do array (length)
+
+        A propriedade length indica o número de elementos.
+
+        cores.length; // 3
+
+        Importante, length não é método, é propriedade.
+
+    Acessando elementos do array
+
+        let cores = ["azul", "verde", "vermelho", "amarelo"];
+
+    Mostrar todos
+
+        Não colocar nenhum indice dentro do colchetes:
+
+        cores[]; // "azul", "verde", "vermelho", "amarelo"
+
+    Primeiro elemento do array
+
+        É sempre o item na posição zero "0":
+
+        cores[0]; // "azul"
+
+    Elementos em posição especifica
+
+        Use o índice desejado entre colchetes:
+
+        cores[1]; // "verde"
+        cores[2]; // "vermelho"
+
+    Ultimo elemento do array
+
+        Usar a propriedade length e subtrair 1.
+
+        cores.length - 1
+
+        Exemplo:
+
+        cores[cores.length - 1]; // "amarelo"
+
+    Adicionar elementos (operações comuns)
+
+        Ao inserir um item seu metodo retorno o novo tamanho do array (caso necessario utilziarmos).
+
+        let numeros = [1, 2];
+
+        Adicionar no início (unshift):
+
+        numeros.unshift(0);
+        // [0, 1, 2]
+
+        Adicionar em local especifico (splice):
+
+        array.splice(<indice>, <qtde de itens a remover>, <item a ser inserido>);
+
+        Exemplo:
+
+        let frutas = ["maçã", "banana", "laranja"];
+        frutas.splice(1, 0, "uva");
+
+        Resultado:
+        // ["maçã", "uva", "banana", "laranja"]
+
+        Adicionar no final (push):
+
+        numeros.push(3);
+        // [0, 1, 2, 3]
+
+    Remover elementos
+
+        Ao remover um elemento seu metodo retorna o item removido (caso necessario utilizarmos).
+
+        Remover do início (shift):
+
+        numeros.shift();
+        // remove o primeiro
+
+        Remover em local especifico (splice):
+
+        array.splice(<indice a ser removido>, 1);
+
+        Exemplo:
+
+        let frutas = ["maçã", "banana", "laranja"];
+        frutas.splice(1, 1);
+
+        Resultado:
+        // ["maçã", "laranja"]
+
+        Remover do final (pop):
+
+        numeros.pop();
+        // remove o último     
+
+    Buscar elementos
+
+        Verificar se existe (includes):
+
+        numeros.includes(2); // true
+
+        Encontrar índice (indexOf):
+
+        numeros.indexOf(2); // retorna o índice ou -1
+
+- Objetos
+
+    São estruturas de dados usadas para representar entidades do mundo real, agrupando propriedades (dados) e comportamentos (funções) em um único lugar.
+
+    Um objeto é uma coleção de pares "chave : valor".
+
+    A chave (propriedade) é uma string
+    O valor pode ser qualquer tipo de dado: número, string, boolean, array, função, outro objeto etc.
+
+    Exemplo:
+
+    let pessoa = {
+        nome: "Ana",
+        idade: 25,
+        ativo: true
+    };
+
+    Diferença entre objetos e arrays
+
+        Array:
+
+        Usado para listas ordenadas
+        Acesso por índice numérico
+        Ordem importa
+
+        Exemplo:
+
+        let numeros = [10, 20, 30];
+
+        Objeto:
+
+        Usado para representar coisas com atributos
+        Acesso por nome da propriedade
+        Ordem não é o foco
+
+        Exemplo:
+
+        let pessoa = { 
+            nome: "Ana", 
+            idade: 25 
+        };
+
+    Declarando objetos
+
+        Forma literal (mais comum)
+
+        let carro = {
+            marca: "Ford",
+            modelo: "Fiesta",
+            ano: 2018
+        };
+
+        Objeto vazio e adicionar propriedades depois
+
+        let usuario = {};
+        usuario.nome = "Carlos";
+        usuario.idade = 30;
+
+        Usando new Object (pouco usado) e adicionar propriedades depois
+
+        let produto = new Object();
+        produto.nome = "Teclado";
+
+        A forma literal {} é a recomendada.
+
+    Acessando propriedades
+
+        Notação com ponto (.)
+
+        Usada quando o nome da propriedade é conhecido e válido.
+
+        pessoa.nome;
+        pessoa.idade;
+
+        Exemplo:
+        console.log(pessoa.nome);
+
+        Notação com colchetes []
+
+        Usada quando:
+
+        O nome da propriedade está em uma variável
+        A propriedade tem espaços ou caracteres especiais
+
+        Exemplo:
+
+        let prop = "idade";
+        pessoa[prop];
+
+        Exemplo com nome inválido:
+
+        let obj = {
+        "nome completo": "Ana Silva"
+        };
+        obj["nome completo"];
+
+    Adicionando propriedades
+
+        Com ponto:
+
+        pessoa.altura = 1.70;
+
+        Com colchetes:
+
+        pessoa["peso"] = 65;
+
+        Usando variável:
+
+        let chave = "cidade";
+        pessoa[chave] = "São Paulo";
+
+    Função como propriedade (métodos)
+
+        Quando uma função está dentro de um objeto, ela é chamada de método.
+
+        Exemplo:
+
+        let pessoa = {
+            nome: "Ana",
+            idade: 25,
+            falar: function() {
+                console.log("Olá, meu nome é " + this.nome);
+            }
+        };
+
+        Chamando o método:
+
+        pessoa.falar();
+
+        Forma curta (mais moderna):
+
+        let pessoa = {
+            nome: "Ana",
+            falar() {
+                console.log("Olá, meu nome é " + this.nome);
+            }
+        };
+
+    this
+
+        this é uma palavra-chave que se refere ao objeto que está chamando a função.
+
+        No exemplo:
+
+        pessoa.falar();
+
+        Dentro da função:
+        this === pessoa
+
+        Por isso:
+        this.nome acessa pessoa.nome
+
+        Exemplo:
+
+        let carro = {
+            marca: "Toyota",
+            mostrarMarca() {
+                console.log(this.marca);
+            }
+        };
+
+        carro.mostrarMarca();
+
+        Cuidado com arrow function e this, arrow functions não têm this próprio.
+
+- Estruturas de repetição
+
+    Servem para executar o mesmo bloco de código várias vezes, enquanto uma condição for atendida ou enquanto houver itens a percorrer.
+
+    for
+
+        O for é usado quando você sabe ou consegue prever quantas vezes o loop vai rodar.
+
+        Estrutura:
+
+        for (inicialização; condição; incremento) {
+            // código executado a cada repetição
+        }
+
+        Exemplo:
+
+        for (let i = 0; i < 5; i++) {
+            console.log(i);
+        }
+
+        O que cada parte faz:
+
+        inicialização > cria a variável de controle (let i = 0)
+        condição > enquanto for true, o loop continua (i < 5)
+        incremento > executado ao final de cada volta (i++)
+
+        Uso comum:
+
+        Percorrer arrays
+        Contadores
+
+    while
+
+        O while é usado quando não se sabe exatamente quantas vezes o loop vai rodar, apenas a condição.
+
+        Estrutura:
+
+        while (condição) {
+            // código executado a cada repetição
+        }
+
+        Exemplo:
+
+        let i = 0;
+
+        while (i < 5) {
+            console.log(i);
+            i++;
+        }
+
+        Se a condição começar falsa, o código nunca executa.
+
+        Uso comum:
+
+        Esperar um evento
+        Ler dados até uma condição ser atendida
+
+    do while
+
+        O do while é parecido com o while, mas com uma diferença importante:
+
+        Ele sempre executa pelo menos uma vez.
+
+        Estrutura:
+
+        do {
+            // código executado a cada repetição
+        } while (condição);
+
+        Exemplo:
+
+        let i = 10;
+
+        do {
+            console.log(i);
+            i++;
+        } while (i < 5);
+
+        Mesmo com a condição falsa, o código roda uma vez.
+
+    Diferença entre for, while e do while
+
+        for:
+
+        Ideal quando sabe o número de repetições
+        Tudo fica em uma linha (controle claro)
+
+        while:
+
+        Testa a condição antes
+        Pode não executar nenhuma vez
+
+        do while:
+
+        Testa a condição depois
+        Executa pelo menos uma vez
+
+    break
+
+        O break interrompe completamente o loop, mesmo que a condição ainda seja verdadeira.
+
+        Exemplo:
+
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) {
+                break;
+            }
+            console.log(i);
+        }
+
+        Resultado:
+        0 1 2 3 4
+
+        Uso comum:
+
+        Parar quando encontrar um valor específico
+        Evitar processamento desnecessário
+
+    continue
+
+        O continue pula a iteração atual e vai direto para a próxima.
+
+        Exemplo:
+
+        for (let i = 0; i < 5; i++) {
+            if (i === 2) {
+                continue;
+            }
+            console.log(i);
+        }
+
+        Resultado:
+        0 1 3 4
+
+        Uso comum:
+
+        Ignorar certos valores
+        Filtrar dentro do loop
+
+    Comparação rápida entre break e continue
+
+        break > sai do loop
+        continue > pula a volta atual
+
+- O que é HTML?
+
+    HTML (HyperText Markup Language) é a linguagem usada para criar a estrutura de uma página da web, como títulos, textos, imagens, links e tabelas.
+
+- O que é CSS?
+
+    CSS (Cascading Style Sheets) é a linguagem usada para definir a aparência da página, como cores, fontes, tamanhos, margens e posicionamento dos elementos.
+
+- O que é o arquivo index.html?
+
+    É o arquivo principal de um site. Quando você acessa um endereço na web, normalmente o navegador procura primeiro pelo arquivo index.html.
+
+- Como criar um arquivo básico HTML no VS Code?
+
+    Abra o VS Code.
+    Crie uma nova pasta para o projeto.
+    Crie um arquivo chamado index.html.
+    Digite ! e pressione Enter (ou Tab). O VS Code criará automaticamente a estrutura básica do HTML.
+
+- Explicação básica de um arquivo HTML gerado pelo VS Code
+
+    <!doctype html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Document</title>
+        </head>
+        <body></body>
+    </html>
+
+    <!doctype html> - Informa ao navegador que o documento usa HTML5.
+    <html> - Contém todo o conteúdo da página.
+    lang="en" - Define o idioma da página (neste caso, inglês).
+    <head> - Contém informações da página que não aparecem no conteúdo, como título e configurações.
+    <meta charset="UTF-8"> - Permite usar caracteres especiais, como ç e á.
+    <meta name="viewport"...> - Faz a página se adaptar corretamente a celulares e tablets.
+    <title> - Define o título exibido na aba do navegador.
+    <body> - Contém todo o conteúdo visível da página, como textos, imagens e botões.
+
+- O que é versao em documento HTML?
+
+    Em HTML, a versão do documento indica qual padrão de HTML o navegador deve usar para interpretar a página.
+
+    Hoje, praticamente todos os sites usam HTML5.
+
+    Isso é informado logo na primeira linha do arquivo:
+
+    <!doctype html>
+
+    Essa linha diz ao navegador:
+
+    "Este documento foi escrito usando o padrão HTML5."
+
+    Por que isso é importante?
+
+    Se essa declaração não existir ou estiver incorreta, o navegador pode entrar em um modo de compatibilidade ("Quirks Mode"), interpretando a página como se fosse uma versão muito antiga do HTML, o que pode causar problemas de layout e funcionamento.
+
+- O que são elementos HTML?
+
+    Elementos HTML são as partes que formam uma página, como títulos, parágrafos, imagens e links. Geralmente são compostos por uma tag de abertura, conteúdo e uma tag de fechamento.
+
+    Exemplo:
+
+    <p>Olá, mundo!</p>
+
+- O que são tags HTML?
+
+    Tags são os comandos usados para criar elementos HTML. Elas ficam entre os símbolos < e >.
+
+    Exemplos:
+
+    <h1>
+    <p>
+    <img>
+    <a>
+
+- O que são atributos HTML?
+
+    Atributos fornecem informações extras para uma tag. Eles são escritos dentro da tag de abertura.
+
+    Exemplo:
+
+    <img src="foto.jpg" alt="Minha foto">
+    src - Informa onde está a imagem.
+    alt - Define um texto alternativo para a imagem.
+
+- O que é aninhamento de elementos?
+
+    Aninhamento é quando um elemento HTML é colocado dentro de outro elemento.
+
+    Exemplo:
+
+    <body>
+        <h1>Meu Site</h1>
+        <p>Bem-vindo!</p>
+    </body>
+
+    Nesse exemplo, as tags <h1> e <p> estão aninhadas dentro da tag <body>.
+
+- O que é elemento pai e elemento filho?
+
+    Quando um elemento está dentro de outro:
+
+    Elemento pai - É o elemento que contém outro elemento.
+    Elemento filho - É o elemento que está dentro do elemento pai.
+
+    Exemplo:
+
+    <body>
+        <p>Olá, mundo!</p>
+    </body>
+
+    <body> - elemento pai.
+    <p> - elemento filho.
+
+- O que são "class" e "id"?
+
+    São atributos HTML usados para identificar elementos.
+
+    "class"
+
+    Serve para identificar um ou vários elementos com o mesmo nome.
+
+    Exemplo:
+
+    <p class="texto">Primeiro parágrafo</p>
+    <p class="texto">Segundo parágrafo</p>
+
+    Ambos pertencem à classe texto.
+
+    "id"
+
+    Serve para identificar um único elemento da página.
+
+    Exemplo:
+
+    <h1 id="titulo">Meu Site</h1>
+
+    O id="titulo" deve ser único na página.
+
+- O que é DOM?
+
+    DOM (Document Object Model) é a representação da página HTML em forma de árvore, criada pelo navegador.
+
+    Ela permite que o JavaScript encontre, altere, adicione ou remova elementos da página.
+
+    Exemplo:
+
+    <body>
+        <h1>Título</h1>
+        <p>Texto</p>
+    </body>
+
+    O navegador transforma esse HTML em uma estrutura organizada (árvore), chamada DOM.
+
+- O que é semântica em HTML?
+
+    Semântica é usar a tag correta para cada tipo de conteúdo, tornando o código mais organizado, acessível e fácil de entender.
+
+    Exemplos de tags semânticas:
+
+    <header> - cabeçalho
+    <nav> - menu de navegação
+    <main> - conteúdo principal
+    <section> - seção da página
+    <article> - artigo ou conteúdo independente
+    <footer> - rodapé
+
+    Em vez de escrever tudo com <div>, usamos tags que descrevem o significado do conteúdo.
+
+    Exemplo:
+
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    <main>
+        <p>Bem-vindo ao site.</p>
+    </main>
+
+    <footer>
+        <p>Todos os direitos reservados.</p>
+    </footer>
+
+- Tags mais comuns
+
+    <h1> até <h6>
+
+        Significado: São títulos e subtítulos.
+
+        <h1> - título principal
+        <h2> - subtítulo
+        ...
+        <h6> - menor título
+
+        Exemplo:
+
+        <h1>Título</h1>
+        <h3>Subtítulo</h3>
+
+    <p>
+
+        Significado: Cria um parágrafo.
+
+        Exemplo:
+
+        <p>Texto do parágrafo.</p>
+
+    <br>
+
+        Significado: Quebra uma linha.
+
+        Exemplo:
+
+        Primeira linha<br>
+        Segunda linha
+
+    <a>
+
+        Significado:  Cria um link.
+
+        Exemplo:
+
+        <a href="https://google.com">Google</a>
+
+    <img>
+
+        Significado: Exibe uma imagem.
+
+        Exemplo:
+
+        <img src="foto.jpg" alt="Descrição">
+
+    <strong>
+
+        Significado: Destaca um texto como importante (geralmente em negrito).
+
+        Exemplo:
+
+        <strong>Texto importante</strong>
+
+    <em>
+
+        Significado: Dá ênfase ao texto (geralmente em itálico).
+
+        Exemplo:
+
+        <em>Texto em italico</em>
+
+    <div>
+
+        Significado: Cria uma divisão ou bloco para organizar a página.
+
+        Exemplo:
+
+        <div>
+            <p>Um paragrafo</p>
+            <p>Outro paragrafo</p>
+        </div>
+
+    <span>
+
+        Significado: Agrupa uma pequena parte do texto sem criar uma nova linha.
+
+        Exemplo:
+
+        <p>Meu nome é <span>Fernando</span>.</p>
+
+    <ul>
+
+        Significado: Cria uma lista não ordenada (com marcadores).
+
+        Exemplo:
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+        </ul>
+
+    <ol>
+
+        Significado: Cria uma lista numerada.
+
+        Exemplo:
+
+        <ol>
+            <li>Instalar VS Code</li>
+            <li>Criar index.html</li>
+        </ol>
+
+    <li>
+
+        Significado: Representa um item de uma lista.
+
+        Exemplo:
+
+        <ul>
+            <li>Maçã</li>
+            <li>Banana</li>
+        </ul>
+
+    <table>
+
+        Significado: Cria uma tabela. Uma tabela é composta por linhas, e cada linha contém colunas (células)
+
+        Estrutura de uma tabela:
+
+        Uma tabela normalmente utiliza estas tags internamente
+
+        Tag	        Função
+        <table>	    Cria a tabela.
+        <tr>	    Cria uma linha (Table Row).
+        <th>	    Cria uma célula de cabeçalho (Table Header).
+        <td>	    Cria uma célula de dados (Table Data).
+
+        Exemplo:
+
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Cidade</th>
+            </tr>
+            <tr>
+                <td>Fernando</td>
+                <td>47</td>
+                <td>São Paulo</td>
+            </tr>
+            <tr>
+                <td>Maria</td>
+                <td>30</td>
+                <td>Campinas</td>
+            </tr>
+        </table>
+
+    <form>
+
+        Significado: Cria um formulário.
+
+
+
+
+
+    Estrutura de um formulario:
+
+    Um formulario normalmente utiliza estas tags internamente
+
+    - action
+
+        Informa para onde os dados serão enviados.
+
+        <form action="/cadastro">
+
+        Quando o usuário clicar em Enviar, os dados irão para /cadastro.
+
+    - method
+
+        Define como os dados serão enviados.
+
+        Os métodos mais usados são:
+
+        GET
+        <form method="get">
+        Envia os dados pela URL.
+        Usado para pesquisas e filtros.
+
+        POST
+        <form method="post">
+        Envia os dados de forma mais segura.
+        Muito usado para login, cadastro e envio de informações.
+
+    <label>
+
+        Cria um rótulo para um campo.
+
+        Exemplo:
+
+        <label>Nome:</label>
+
+    <input>
+
+    É o elemento mais utilizado dentro de formulários.
+
+    Dependendo do atributo type, ele cria campos diferentes.
+
+    Exemplos:
+
+    type="text"
+
+        Campo de texto.
+
+        <input type="text">
+
+    type="password"
+
+        Campo de senha.
+
+        <input type="password">
+
+    type="email"
+
+        Campo para e-mail.
+
+        <input type="email">
+
+    type="number"
+
+        Campo numérico.
+
+        <input type="number">
+
+    type="date"
+
+        Seleciona uma data.
+
+        <input type="date">
+
+    type="time"
+
+        Seleciona um horário.
+
+        <input type="time">
+
+    type="color"
+
+        Escolhe uma cor.
+
+        <input type="color">
+
+    type="range"
+
+        Cria uma barra deslizante.
+
+        <input type="range">
+
+    type="checkbox"
+
+        Caixa de seleção. Podem existir várias marcadas ao mesmo tempo.
+
+        <input type="checkbox">
+
+    type="radio"
+
+        Botão de opção. Normalmente apenas uma opção pode ser selecionada.
+
+        <input type="radio">
+
+    type="file"
+
+        Seleciona um arquivo.
+
+        <input type="file">
+
+    type="submit"
+
+        Cria um botão para enviar o formulário. Hoje é mais comum utilizar a tag <button>.
+
+        <input type="submit">
+
+    type="reset"
+
+        Limpa todos os campos.
+
+        <input type="reset">
+
+    type="hidden"
+
+        Campo invisível. Muito utilizado para enviar informações sem que o usuário veja.
+
+        <input type="hidden">
+
+    <textarea>
+
+        Permite escrever textos longos.
+
+        <textarea></textarea>
+
+    <button>
+
+        Cria um botão. Também pode ser usado para: <button type="submit"> ou <button type="reset">
+
+        <button>Salvar</button>
+
+    <select>
+
+        Cria uma lista suspensa.
+
+        <select>
+            <option>Brasil</option>
+            <option>Portugal</option>
+        </select>
+
+    <optgroup>
+
+        Agrupa opções dentro de um <select>.
+
+        <select>
+
+            <optgroup label="Frutas">
+                <option>Maçã</option>
+                <option>Banana</option>
+            </optgroup>
+
+            <optgroup label="Verduras">
+                <option>Alface</option>
+                <option>Couve</option>
+            </optgroup>
+
+        </select>
+
+    <fieldset>
+
+        Agrupa campos relacionados.
+
+        <fieldset>
+
+        </fieldset>
+
+    <legend>
+
+        Cria um título para um <fieldset>.
+
+        <fieldset>
+            <legend>Dados Pessoais</legend>
+        </fieldset>
+
+    Exemplo completo de formulário:
+
+        <form action="/cadastro" method="post">
+
+            <fieldset>
+
+                <legend>Cadastro</legend>
+
+                <label>Nome:</label><br>
+                <input type="text"><br><br>
+
+                <label>E-mail:</label><br>
+                <input type="email"><br><br>
+
+                <label>Senha:</label><br>
+                <input type="password"><br><br>
+
+                <label>Idade:</label><br>
+                <input type="number"><br><br>
+
+                <label>País:</label><br>
+
+                <select>
+                    <option>Brasil</option>
+                    <option>Portugal</option>
+                    <option>Argentina</option>
+                </select>
+
+                <br><br>
+
+                <label>Mensagem:</label><br>
+
+                <textarea rows="4" cols="30"></textarea>
+
+                <br><br>
+
+                <input type="checkbox">
+                Aceito os termos.
+
+                <br><br>
+
+                <button type="submit">
+                    Cadastrar
+                </button>
+
+            </fieldset>
+
+        </form>
+
+    Boas práticas:
+
+        Associe sempre um <label> a cada campo <input>, usando o atributo for no <label> e um id correspondente no <input>. Isso melhora a acessibilidade e permite que o usuário clique no texto do rótulo para focar ou selecionar o campo.
+
+        Exemplo:
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+
+        Dê um atributo name aos campos que devem ser enviados pelo formulário, pois é esse nome que identifica o valor enviado ao servidor.
+
+    <nav>
+
+        Significado: Representa um menu de navegação.
+
+        Exemplo:
+
+        <nav>
+            <a href="/">Início</a>
+            <a href="/contato">Contato</a>
+        </nav>
+
+    <main>
+
+        Significado: Representa o conteúdo principal da página.
+
+        Exemplo:
+
+        <main>
+            <h2>Notícias</h2>
+        </main>
+
+    <section>
+
+        Significado: Representa uma seção do conteúdo.
+
+        Exemplo:
+
+        <section>
+            <h2>Produtos</h2>
+        </section>
+
+    <article>
+
+        Significado: Representa um conteúdo independente, como uma notícia ou postagem.
+
+        Exemplo:
+
+        <article>
+            <h2>Nova versão do HTML</h2>
+            <p>Foi lançada...</p>
+        </article>
+
+    <footer>
+
+        Significado: Representa o rodapé da página.
+
+        Exemplo:
+
+        <footer>
+            <p>2026 Meu Site</p>
+        </footer>
+
+
+
+
+
+- O que é CSS
+
+    CSS (Cascading Style Sheets) é uma linguagem usada para definir como os elementos HTML serão exibidos.
+
+    Todo CSS possui três partes:
+
+    seletor {
+        propriedade: valor;
+    }
+
+    Exemplo:
+
+    p {
+        color: red;
+    }
+
+    Onde:
+
+    p - seletor (o elemento que sera configurado)
+    color - propriedade (a propriedade do elemento que sera alterada)
+    red - valor ( o valor que sera atribuido a essa propriedade)
+
+- Carregar código CSS embutido no HTML
+
+    Inserir a tag abaixo no arquivo HTML antes do fechamento da tag <head> e dentro dela o código CSS.
+
+    <style>
+        ...
+    </style>
+
+- Carregar código CSS separado do HTML
+
+    Criar um arquivo com extensão .css separado e adicionar a tag abaixo no arquivo HTML indicando seu nome e caminho antes do fechamento da tag <head>.
+
+    <link rel="stylesheet" href="style.css">
+
+- Tipos de seletores
+
+    Os seletores CSS são usados para indicar quais elementos HTML receberão determinado estilo.
+
+    Seletor de elemento (ou tag)
+
+        Seleciona todas as tags de um determinado tipo.
+
+        Exemplo:
+
+        p {
+            ...
+        }
+
+    Seletor de classe (.)
+
+        Seleciona todos os elementos que possuem uma determinada classe.
+
+        Exemplo:
+
+        .destaque {
+            ...;
+        }
+
+    Seletor de ID (#)
+
+        Seleciona apenas o elemento que possui aquele ID.
+
+        Exemplo:
+
+        #titulo {
+            ...;
+        }
+
+    Seletor universal (*)
+
+        Seleciona todos os elementos da página.
+
+        Exemplo:
+
+        * {
+            ...
+        }
+
+    Seletor de agrupamento (,)
+
+        Permite aplicar o mesmo estilo a vários elementos.
+
+        Exemplo:
+
+        h1, h2, h3 {
+            ...
+        }
+
+    Seletor descendente (espaço)
+
+        Seleciona elementos que estão dentro de outro elemento.
+
+        Exemplo:
+
+        div p {
+            ...
+        }
+
+    Seletor de filho direto (>)
+
+        Seleciona apenas os filhos diretos.
+
+        Exemplo:
+
+        div > p {
+            ...
+        }
+
+    Seletor de atributos ([])
+
+        Seleciona elementos que possuem determinado atributo.
+
+        Exemplo:
+
+        input[type="text"] {
+            ...
+        }
+
+    Seletor de pseudoclasse (:)
+
+        Seleciona elementos em um determinado estado.
+
+        Exemplo com :hover:
+
+        button:hover {
+            ...
+        }
+
+        Outras pseudoclasses comuns:
+
+        a:hover
+        a:visited
+        a:active
+        input:focus
+        li:first-child
+        li:last-child
+        li:nth-child
+
+    Seletor de pseudoelemento (::)
+
+        Seleciona uma parte específica do elemento.
+
+        Exemplo:
+
+        p::first-letter {
+            ...
+        }
+
+        Outros exemplos:
+
+        ::before
+        ::after
+        ::first-line
+        ::selection
+        ::placeholder
+
+- Tipos de propriedades
+
+    Texto e fontes
+
+        color: define a cor do texto
+        font-family: define o tipo de fonte
+        font-size: define o tamanho da fonte
+        font-weight: define o peso da fonte (normal, negrito)
+        font-style: define o estilo da fonte (normal, itálico)
+        line-height: define a altura entre linhas
+        text-align: alinha o texto (left, center, right, justify)
+        text-decoration: adiciona decoração ao texto (underline, none)
+        text-transform: altera o formato do texto (uppercase, lowercase)
+        letter-spacing: controla o espaço entre letras
+        word-spacing: controla o espaço entre palavras
+
+    Fundo
+
+        background-color: define a cor de fundo
+        background-image: adiciona uma imagem de fundo
+        background-size: controla o tamanho da imagem de fundo
+        background-position: define a posição da imagem de fundo
+        background-repeat: controla a repetição da imagem de fundo
+        background: atalho para várias propriedades de fundo
+
+    Dimensões
+
+        width: define a largura do elemento
+        height: define a altura do elemento
+        max-width: define a largura máxima
+        min-width: define a largura mínima
+        max-height: define a altura máxima
+        min-height: define a altura mínima
+
+    Espaçamento
+
+        margin: define espaço externo do elemento
+        margin-top: margem superior
+        margin-right: margem direita
+        margin-bottom: margem inferior
+        margin-left: margem esquerda
+        padding: define espaço interno do elemento
+        padding-top: espaço interno superior
+        padding-right: espaço interno direito
+        padding-bottom: espaço interno inferior
+        padding-left: espaço interno esquerdo
+
+    Bordas
+
+        border: cria uma borda ao redor do elemento
+        border-width: define a espessura da borda
+        border-style: define o estilo da borda (solid, dashed)
+        border-color: define a cor da borda
+        border-radius: arredonda os cantos
+        outline: cria uma linha externa ao elemento
+
+    Posicionamento
+
+        display: define como o elemento será exibido
+        visibility: controla a visibilidade do elemento
+        position: define o tipo de posicionamento
+        top: distância do topo
+        right: distância da direita
+        bottom: distância inferior
+        left: distância esquerda
+        z-index: controla a ordem de sobreposição
+
+    Grid
+
+        display: grid: ativa o CSS Grid
+        grid-template-columns: define colunas
+        grid-template-rows: define linhas
+        grid-column: controla posição na coluna
+        grid-row: controla posição na linha
+        gap: espaço entre células
+
+    Listas
+
+        list-style: controla estilo da lista
+        list-style-type: define marcador da lista
+        list-style-image: usa imagem como marcador
+
+    Imagens
+
+        object-fit: controla como a imagem se ajusta
+        object-position: controla posição da imagem
+        opacity: controla transparência
+        filter: aplica efeitos visuais
+
+    Tabelas
+
+        border-collapse: junta bordas da tabela
+        border-spacing: controla espaço entre células
+        caption-side: posição do título da tabela
+        table-layout: controla o cálculo da largura
+
+    Formulários
+
+        cursor: muda o formato do mouse
+        resize: controla redimensionamento de campos
+        appearance: altera aparência padrão do navegador
+        accent-color: altera cor de controles como checkbox
+
+    Animações e transições
+
+        transition: cria transições suaves
+        transition-duration: duração da transição
+        transform: aplica transformações
+        animation: cria animações
+        animation-duration: duração da animação
+        animation-name: nome da animação
+        @keyframes: define etapas da animação
+
+    Sombras
+
+        box-shadow: cria sombra em elementos
+        text-shadow: cria sombra em textos
+
+    Overflow
+
+        overflow: controla conteúdo que ultrapassa o tamanho
+        overflow-x: controla excesso horizontal
+        overflow-y: controla excesso vertical
+
+    Controle visual
+
+        opacity: define transparência
+        clip-path: recorta elementos
+        box-sizing: controla cálculo de tamanho
+        content: adiciona conteúdo em pseudo-elementos
+
