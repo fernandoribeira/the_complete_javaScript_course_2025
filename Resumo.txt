@@ -74,8 +74,27 @@ Seção 06
     Aula 068 - OK
     Aula 069 - OK
     Aula 070 - OK
-    Aula 071 - 
+    Aula 071 - OK
 Seção 07
+    Aula 072 - OK
+    Aula 073 - OK
+    Aula 074 - 
+    Aula 075 - 
+    Aula 076 - 
+    Aula 077 - 
+    Aula 078 - 
+    Aula 079 - 
+    Aula 080 - 
+    Aula 081 - 
+    Aula 082 - 
+    Aula 083 - 
+    Aula 084 - 
+    Aula 085 - 
+    Aula 086 - 
+    Aula 087 - 
+    Aula 088 - 
+    Aula 089 - 
+    Aula 090 - 
 Seção 08
 Seção 09
 Seção 10
@@ -2309,4 +2328,452 @@ Seção 21
         clip-path: recorta elementos
         box-sizing: controla cálculo de tamanho
         content: adiciona conteúdo em pseudo-elementos
+
+- CSS Reset
+
+    O CSS Reset é uma técnica usada para remover ou padronizar os estilos padrão que cada navegador aplica aos elementos HTML.
+
+    Cada navegador (Chrome, Firefox, Edge, Safari etc.) possui uma folha de estilos interna (User Agent Stylesheet). Isso significa que uma mesma página pode ter pequenas diferenças de aparência dependendo do navegador.
+
+    O CSS Reset elimina esses estilos para que você comece com uma base "limpa".
+
+    Exemplo de um CSS Reset simples:
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+- CSS Box Model
+
+    O CSS Box Model (Modelo de Caixa) é um dos conceitos mais importantes do CSS. Ele define como o navegador calcula o tamanho e o espaço ocupado por cada elemento HTML.
+
+    A ideia principal é que todo elemento HTML é tratado como uma caixa (box).
+
+    Estrutura do Box Model
+
+        Um elemento é composto por quatro partes:
+
+        +-------------------------------------------+
+        |                  Margin                   |
+        |  +-------------------------------------+  |
+        |  |               Border                |  |
+        |  |  +-------------------------------+  |  |
+        |  |  |            Padding            |  |  |
+        |  |  |  +-------------------------+  |  |  |
+        |  |  |  |         Content         |  |  |  |
+        |  |  |  +-------------------------+  |  |  |
+        |  |  +-------------------------------+  |  |
+        |  +-------------------------------------+  |
+        +-------------------------------------------+
+
+        Da parte de dentro para fora:
+
+        Content (Conteúdo): É onde ficam os dados do elemento
+        Padding (Espaçamento interno): O padding é o espaço entre o conteúdo e a borda.
+        Border (Borda): É a borda do elemento.
+        Margin (Espaçamento externo): A margem fica do lado de fora.
+
+    Como o navegador calcula o tamanho?
+
+        Suponha:
+
+        width: 300px;
+        padding: 20px;
+        border: 5px;
+
+        Sem alterar box-sizing, o tamanho total será: Conteúdo = 300px
+
+        Padding esquerdo = 20px
+        Padding direito = 20px
+        Border esquerda = 5px
+        Border direita = 5px
+
+        Total: 300 + 20 + 20 + 5 + 5 = 350px
+
+        Ou seja: width total = 350px
+
+    O problema do Box Model padrão
+
+        Por padrão, o navegador usa:
+
+        box-sizing: content-box;
+
+        Isso significa que a propriedade width controla apenas a área do conteúdo.
+
+        Exemplo:
+
+        width: 300px;
+        padding: 20px;
+        border: 5px solid;
+
+        Resultado: Tamanho total = 350px
+
+        Isso pode dificultar o controle do layout.
+
+    A solução
+
+        box-sizing: border-box
+
+        O navegador ajusta o conteúdo para que o tamanho total continue sendo 300px.
+
+        300px (total)
+
+        ┌─────────────────────────────┐
+        │ Border                      │
+        │ Padding                     │
+        │ Conteúdo (reduzido)         │
+        └─────────────────────────────┘
+
+        Isso torna os layouts muito mais previsíveis, evita surpresas com o cálculo do tamanho dos elementos e facilita bastante a construção de layouts com CSS.
+
+- Medidas em CSS
+
+    São as unidades usadas para definir tamanhos, espaçamentos, posições e dimensões dos elementos.
+
+    Existem dois grandes grupos:
+
+    Medidas absolutas
+    Medidas relativas
+
+    Medidas Absolutas
+
+        São unidades de tamanho fixo. Elas não mudam de acordo com a tela ou o tamanho da fonte.
+
+        "px" (Pixels) é a unidade mais utilizada.
+
+        Quando usar?
+
+        Bordas
+        Ícones
+        Pequenos espaçamentos
+        Elementos que precisam de tamanho fixo
+
+        Na prática, para páginas web, quase sempre usa-se "px".
+
+    Medidas Relativas
+
+        São calculadas com base em outro valor, como o tamanho da fonte, do elemento pai ou da janela do navegador.
+
+        São as mais indicadas para criar layouts responsivos.
+
+        "%" a porcentagem depende do elemento pai.
+
+        "em" é baseado no tamanho da fonte do elemento pai (atenção ao efeito cascata pois ele multiplica sobre o valor herdado).
+
+        "rem" significa "Root EM", ele sempre usa o tamanho da fonte do elemento <html>.
+
+        "auto" permite que o navegador calcule o valor automaticamente (muito usado para centralizar elementos)
+
+        Por que usar "rem"?
+
+            Ele facilita a acessibilidade. Se o usuário aumentar o tamanho padrão da fonte no navegador, todos os elementos definidos em "rem" aumentam proporcionalmente.
+
+        Comparação das principais unidades
+
+            | Unidade | Base de cálculo           | Uso recomendado                                        |
+            | ------- | ------------------------- | ------------------------------------------------------ |
+            | "px"    | Valor fixo                | Bordas, ícones, detalhes                               |
+            | "%"     | Elemento pai              | Largura e altura relativas                             |
+            | "em"    | Fonte do elemento pai     | Espaçamentos e componentes, com cuidado ao aninhamento |
+            | "rem"   | Fonte do <html>           | Tamanho de texto e espaçamentos (muito recomendado)    |
+
+        Recomendações para iniciantes
+
+            Use "px" para bordas, sombras e pequenos detalhes visuais.
+            Prefira "rem" para tamanhos de fonte, margens e padding, pois melhora a consistência e a acessibilidade.
+            Use "%" para elementos que devem acompanhar o tamanho do elemento pai.
+
+- Javascript como selecionar elementos no HTML
+
+    Uma das tarefas mais comuns em JavaScript é selecionar elementos da página HTML para poder ler informações, alterar conteúdo, modificar estilos ou responder a eventos.
+
+    O JavaScript faz isso através do DOM (Document Object Model).
+
+    Métodos mais utilizados
+
+        Hoje, os métodos mais usados são:
+
+        | Método                              | Retorna                     
+        | ----------------------------------- | ----------------------------
+        | document.querySelector()            | Primeiro elemento encontrado
+        | document.querySelectorAll()         | Lista de elementos          
+        | document.getElementById()           | Elemento pelo id            
+        | document.getElementsByClassName()   | Coleção de elementos        
+        | document.getElementsByTagName()     | Coleção de elementos        
+        | document.getElementsByName()        | Coleção de elementos        
+
+        Os três primeiros são os que você usará na maior parte do tempo.
+
+    Selecionar pelo ID (getElementById)
+
+        Como o id deve ser único na página esse método retorna apenas um elemento.
+
+        Exemplo:
+
+        const titulo = document.getElementById("titulo");
+
+    Selecionar pela Classe (getElementsByClassName)
+
+        Como uma classe pode ser usada em diversos elementos esse método retorna uma HTMLCollection.
+
+        Exemplo:
+
+        const textos = document.getElementsByClassName("texto");
+
+    Selecionar pela Tag (getElementsByTagName)
+
+        Como podem existir diversos elementos esse método retorna uma HTMLCollection.
+
+        Exemplo:
+
+        const paragrafos = document.getElementsByTagName("p");
+
+    Seletor diversificado (querySelector)
+
+        Esse método retorna apenas um elemento, o primeiro encontrado.
+
+        É o método mais utilizado atualmente, ele aceita qualquer seletor.
+
+        # para id
+        . para classe
+        propria tag para tag
+
+        Exemplo:
+
+        const titulo = document.querySelector("#titulo");
+        const texto = document.querySelector(".texto");
+        const h1 = document.querySelector("h1");
+
+    Seletor diversificado (querySelectorAll)
+
+        Esse método retorna uma NodeList pois pode encontrar diversos elementos.
+
+        Ele aceita qualquer seletor.
+
+        # para id
+        . para classe
+        propria tag para tag
+
+        Exemplo:
+
+        const titulo = document.querySelectorAll("#titulo");
+        const texto = document.querySelectorAll(".texto");
+        const h1 = document.querySelectorAll("h1");
+
+    Qual método usar?
+
+        Na maioria dos projetos modernos:
+
+        Use "document.querySelector()" quando precisar de um único elemento.
+        Use "document.querySelectorAll()" quando precisar de vários elementos.
+
+- O que é uma NodeList e uma HTMLCollection
+
+    Quando você seleciona vários elementos do HTML, o JavaScript não retorna um array comum. Em vez disso, ele retorna um objeto especial, que pode ser uma NodeList ou uma HTMLCollection, dependendo do método utilizado.
+
+    Embora pareçam arrays, eles têm diferenças importantes.
+
+    O que é uma NodeList?
+
+        Uma NodeList é uma coleção (lista) de nós do DOM.
+
+        Normalmente, você a obtém com:
+
+        document.querySelectorAll();
+
+        Exemplo:
+
+        <p>Primeiro</p>
+        <p>Segundo</p>
+        <p>Terceiro</p>
+        const paragrafos = document.querySelectorAll("p");
+        console.log(paragrafos);
+
+        Resultado:
+
+        NodeList(3)
+
+        Ela contém os três elementos <p>.
+
+        Acessando elementos:
+
+        console.log(paragrafos[0]);
+        console.log(paragrafos[1]);
+        console.log(paragrafos[2]);
+
+        Resultado:
+
+        <p>Primeiro</p>
+        <p>Segundo</p>
+        <p>Terceiro</p>
+
+        Percorrendo uma NodeList:
+
+        Uma grande vantagem é que ela possui o método forEach().
+
+        paragrafos.forEach(function (p) {
+            console.log(p);
+        });
+
+    O que é uma HTMLCollection?
+
+        Uma HTMLCollection é uma coleção de elementos HTML.
+
+        Ela é retornada por métodos como:
+
+        document.getElementsByClassName();
+        document.getElementsByTagName();
+
+        Exemplo:
+
+        const paragrafos = document.getElementsByTagName("p");
+
+        Resultado:
+
+        HTMLCollection(3)
+
+        Acessando elementos:
+
+        console.log(paragrafos[0]);
+        console.log(paragrafos[1]);
+        console.log(paragrafos[2]);
+
+        É exatamente igual à NodeList.
+
+        Percorrendo uma HTMLCollection:
+
+        Ela não possui forEach().
+
+        O jeito mais comum é usar for...of:
+
+        for (const p of paragrafos) {
+            console.log(p);
+        }
+
+        Ou um for tradicional:
+
+        for (let i = 0; i < paragrafos.length; i++) {
+            console.log(paragrafos[i]);
+        }
+
+    Diferença mais importante: coleção "viva" (live) e "estática" (static)
+
+    Essa é a principal diferença entre elas.
+
+    HTMLCollection é "live"
+
+        Ela acompanha automaticamente as alterações no DOM.
+
+        Exemplo:
+
+        <body>
+            <p>Um</p>
+            <p>Dois</p>
+        </body>
+
+        const paragrafos = document.getElementsByTagName("p");
+        console.log(paragrafos.length); // 2
+        const novo = document.createElement("p");
+        novo.textContent = "Três";
+        document.body.appendChild(novo);
+        console.log(paragrafos.length); // 3
+
+        A coleção foi atualizada automaticamente.
+
+    NodeList é "estática"
+
+        Ela representa uma "fotografia" do momento em que foi criada.
+
+        const paragrafos = document.querySelectorAll("p");
+        console.log(paragrafos.length); // 2
+        const novo = document.createElement("p");
+        novo.textContent = "Três";
+        document.body.appendChild(novo);
+        console.log(paragrafos.length); // continua 2
+
+        Para obter a lista atualizada, é necessário fazer a seleção novamente:
+
+        const paragrafosAtualizados = document.querySelectorAll("p");
+
+    Convertendo para um Array
+
+        Se você quiser usar métodos como map(), filter() ou reduce(), pode converter qualquer uma delas em um array.
+
+        const lista = document.querySelectorAll("p");
+        const array = Array.from(lista);
+        console.log(array);
+
+        Ou:
+
+        const lista = document.getElementsByClassName("texto");
+        const array = Array.from(lista);
+
+    Qual usar?
+
+        Hoje, em projetos modernos, a maioria dos desenvolvedores prefere:
+
+        document.querySelector();
+        document.querySelectorAll();
+
+        Motivos:
+
+        usam os mesmos seletores do CSS;
+        são mais flexíveis;
+        NodeList oferece o método forEach();
+        a coleção estática evita comportamentos inesperados quando o DOM muda;
+
+- O que são Web APIs
+
+    As Web APIs são funcionalidades disponibilizadas pelo navegador para que o JavaScript possa interagir com a página, o computador do usuário e serviços da web.
+
+    Uma dúvida muito comum é pensar que tudo faz parte do JavaScript. Na verdade, não faz.
+
+    O JavaScript é apenas a linguagem. Quem fornece recursos como manipular o HTML, fazer requisições HTTP ou usar o GPS é o navegador, por meio das Web APIs.
+
+    Quem faz o quê?
+
+        Podemos imaginar a arquitetura assim:
+
+        Seu código JavaScript
+                │
+                ▼
+        Engine JavaScript (V8, SpiderMonkey...)
+                │
+                ▼
+            Web APIs
+                │
+                ▼
+            Navegador
+
+
+        JavaScript executa seu código.
+        Web APIs oferecem funcionalidades extras.
+        Navegador implementa essas APIs.
+
+        Exemplo: 
+
+        console.log("Olá");
+
+        console.log() não faz parte da linguagem JavaScript. Quem fornece o objeto console é o navegador (ou o ambiente de execução, como o Node.js).
+
+        document.querySelector("h1");
+
+        Também não faz parte do JavaScript. O objeto document pertence à DOM API, que é uma Web API.
+
+    Principais Web APIs
+
+        | API               | Para que serve?                                                          |
+        | ------------------| ------------------------------------------------------------------------ |
+        | DOM API           | Manipular HTML e CSS                                                     |
+        | Events API        | Responder a cliques, teclado, mouse etc.                                 |
+        | Fetch API         | Fazer requisições HTTP                                                   |
+        | Timer API         | Executar código após um tempo ou em intervalos                           |
+        | Local Storage API | Armazenar dados no navegador                                             |
+        | Geolocation API   | Obter a localização do usuário                                           |
+        | Clipboard API     | Copiar e ler texto da área de transferência                              |
+        | Canvas API        | Desenhar gráficos e animações                                            |
+        | Audio/Video API   | Controlar mídia                                                          |
+        | BOM               | Acessar informações do navegador (`window`, `location`, `history`, etc.) |
 
