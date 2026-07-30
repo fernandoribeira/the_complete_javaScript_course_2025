@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: yellow;
+}
+
+.titulo {
+    color: blue;
+    margin: 20px;
+}
+
+.paragrafo {
+    color: red;
+    padding: 30;
+}
+
+#subtitulo {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#paragrafo {
+    background-color: green;
+    margin: 30px;
+    padding: 20px;
+    border: solid black;
+}
+
+form {
+    background-color: aqua;
+    width: 50%;
+}
+
+img {
+    align-items: center;
+}
