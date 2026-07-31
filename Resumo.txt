@@ -78,15 +78,15 @@ Seção 06
 Seção 07
     Aula 072 - OK
     Aula 073 - OK
-    Aula 074 - 
-    Aula 075 - 
-    Aula 076 - 
-    Aula 077 - 
-    Aula 078 - 
-    Aula 079 - 
-    Aula 080 - 
-    Aula 081 - 
-    Aula 082 - 
+    Aula 074 - OK
+    Aula 075 - OK
+    Aula 076 - OK
+    Aula 077 - OK
+    Aula 078 - OK
+    Aula 079 - OK
+    Aula 080 - OK
+    Aula 081 - OK
+    Aula 082 - OK
     Aula 083 - 
     Aula 084 - 
     Aula 085 - 
@@ -144,6 +144,7 @@ Seção 21
         Debug > Console: Font Size set to "16"
         Terminal > Integrated: Font Size set to "16"
         Markdown > Preview: Font Size set to "16"
+        workbench.externalBrowser > chrome
 
 - Como criar um documento HTML básico no VSCode
 
@@ -2777,3 +2778,14 @@ Seção 21
         | Audio/Video API   | Controlar mídia                                                          |
         | BOM               | Acessar informações do navegador (`window`, `location`, `history`, etc.) |
 
+
+
+
+
+.textContent
+.value
+.addEventListener
+.style
+
+Math.random()
+Math.trunc

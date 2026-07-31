@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Jogo Pedra Papel Tesoura</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h1 class="titulo">Jogo Pedra Papel Tesoura</h1>
+        <fieldset class="campo">
+            <legend>Escolha sua opção e clique em jogar...</legend>
+            <div>
+                <input type="radio" name="opcaoEscolhida" value="pedra" />
+                <label for="pedra">Pedra</label>
+            </div>
+            <div>
+                <input type="radio" name="opcaoEscolhida" value="papel" />
+                <label for="papel">Papel</label>
+            </div>
+            <div>
+                <input type="radio" name="opcaoEscolhida" value="tesoura" />
+                <label for="tesoura">Tesoura</label>
+            </div>
+        </fieldset>
+        <input type="button" value="Jogar" class="jogar botao" />
+        <div class="resumo">
+            <h2>Resumo do jogo</h2>
+            <p class="jogoNaoIniciadoResumo">Jogo não iniciado</p>
+            <div class="quadroResumo">
+                <p>Quantidade de rodadas: <span class="quantidadeRodadas"></span></p>
+                <p>Minhas vitórias: <span class="minhasVitorias"></span></p>
+                <p>Vitórias do computador: <span class="vitoriasComputador"></span></p>
+                <p>Empates: <span class="empates"></span></p>
+            </div>
+        </div>
+        <div class="rodada">
+            <h2>Status da última rodada</h2>
+            <p class="jogoNaoIniciadoRodada">Jogo não iniciado</p>
+            <div class="quadroRodada">
+                <p>Você escolheu <span class="voceEscolheu"></span></p>
+                <p>O computador escolheu <span class="computadorEscolheu"></span></p>
+                <p><span class="resultado"></span></p>
+            </div>
+        </div>
+        <input type="button" value="Reset" class="reset botao" />
+    </body>
+    <script src="script.js"></script>
+</html>
