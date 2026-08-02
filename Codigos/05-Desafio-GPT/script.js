@@ -54,6 +54,17 @@ function limpaQuadros(dom) {
     dom.quadroRodada.style.display = "none";
 }
 
+// Le status dos botoes
+function statusBotoes() {
+    let minhaJogada;
+    for (let i = 0; i < dom.botoes.length; i++) {
+        if (dom.botoes[i].checked) {
+            minhaJogada = dom.botoes[i].value;
+        }
+    }
+    return minhaJogada;
+}
+
 // Reset de jogo
 dom.reset.addEventListener("click", () => {
     limpaVariaveis(variaveisComuns);
@@ -64,12 +75,7 @@ dom.reset.addEventListener("click", () => {
 // Logica do botao Jogar
 dom.jogar.addEventListener("click", () => {
     // Capturando minha jogada
-    let minhaJogada;
-    for (let i = 0; i < dom.botoes.length; i++) {
-        if (dom.botoes[i].checked) {
-            minhaJogada = dom.botoes[i].value;
-        }
-    }
+    let minhaJogada = statusBotoes();
     if (minhaJogada) {
         // Criando jogada computador
         let jogadaComputador;
