@@ -1,7 +1,7 @@
 "use strict";
 
 // Variaveis DOM
-const dom = {
+const variaveisDom = {
     botoes: document.querySelectorAll("input[type=radio]"),
     jogar: document.querySelector(".jogar"),
     quadroResumo: document.querySelector(".quadroResumo"),
@@ -24,112 +24,121 @@ const variaveisComuns = {
     minhasVitoriasContador: 0,
     vitoriasComputadorContador: 0,
     empatesContador: 0,
+    opcoes: ["pedra", "papel", "tesoura"],
+    minhaJogada: "",
+    jogadaComputador: "",
+    resultado: "",
 };
 
 // Funcoes
-function limpaVariaveis(variaveisComuns) {
+const limpaVariaveisComuns = () => {
     variaveisComuns.quantidadeRodadasContador = 0;
     variaveisComuns.minhasVitoriasContador = 0;
     variaveisComuns.vitoriasComputadorContador = 0;
     variaveisComuns.empatesContador = 0;
-}
+};
 
-function limpaBotoes(dom) {
-    for (let i = 0; i < dom.botoes.length; i++) {
-        dom.botoes[i].checked = false;
+const limpaBotoes = () => {
+    for (let i = 0; i < variaveisDom.botoes.length; i++) {
+        variaveisDom.botoes[i].checked = false;
     }
-}
+};
 
-function limpaQuadros(dom) {
-    dom.quantidadeRodadas.textContent = "";
-    dom.minhasVitorias.textContent = "";
-    dom.vitoriasComputador.textContent = "";
-    dom.empates.textContent = "";
-    dom.voceEscolheu.textContent = "";
-    dom.computadorEscolheu.textContent = "";
-    dom.resultado.textContent = "";
-    dom.jogoNaoIniciadoResumo.style.display = "block";
-    dom.jogoNaoIniciadoRodada.style.display = "block";
-    dom.quadroResumo.style.display = "none";
-    dom.quadroRodada.style.display = "none";
-}
+const limpaQuadros = () => {
+    variaveisDom.quantidadeRodadas.textContent = "";
+    variaveisDom.minhasVitorias.textContent = "";
+    variaveisDom.vitoriasComputador.textContent = "";
+    variaveisDom.empates.textContent = "";
+    variaveisDom.voceEscolheu.textContent = "";
+    variaveisDom.computadorEscolheu.textContent = "";
+    variaveisDom.resultado.textContent = "";
+    variaveisDom.jogoNaoIniciadoResumo.style.display = "block";
+    variaveisDom.jogoNaoIniciadoRodada.style.display = "block";
+    variaveisDom.quadroResumo.style.display = "none";
+    variaveisDom.quadroRodada.style.display = "none";
+};
 
-// Le status dos botoes
-function statusBotoes() {
-    let minhaJogada;
-    for (let i = 0; i < dom.botoes.length; i++) {
-        if (dom.botoes[i].checked) {
-            minhaJogada = dom.botoes[i].value;
+const mostraQuadros = () => {
+    variaveisDom.jogoNaoIniciadoResumo.style.display = "none";
+    variaveisDom.jogoNaoIniciadoRodada.style.display = "none";
+    variaveisDom.quadroResumo.style.display = "block";
+    variaveisDom.quadroRodada.style.display = "block";
+};
+
+const aumentaNumeroRodadas = () => {
+    variaveisComuns.quantidadeRodadasContador++;
+};
+
+const obterMinhaJogada = () => {
+    for (let i = 0; i < variaveisDom.botoes.length; i++) {
+        if (variaveisDom.botoes[i].checked) {
+            return variaveisDom.botoes[i].value;
         }
     }
-    return minhaJogada;
-}
+};
 
-// Reset de jogo
-dom.reset.addEventListener("click", () => {
-    limpaVariaveis(variaveisComuns);
-    limpaBotoes(dom);
-    limpaQuadros(dom);
+const criarJogadaComputador = () => {
+    return variaveisComuns.opcoes[Math.trunc(Math.random() * variaveisComuns.opcoes.length)];
+};
+
+const comparaJogadas = () => {
+    // Empate
+    if (
+        (variaveisComuns.minhaJogada == "pedra" && variaveisComuns.jogadaComputador == "pedra") ||
+        (variaveisComuns.minhaJogada == "papel" && variaveisComuns.jogadaComputador == "papel") ||
+        (variaveisComuns.minhaJogada == "tesoura" && variaveisComuns.jogadaComputador == "tesoura")
+    ) {
+        variaveisComuns.empatesContador++;
+        return "Empate!";
+    } else if (
+        (variaveisComuns.minhaJogada == "pedra" && variaveisComuns.jogadaComputador == "tesoura") ||
+        (variaveisComuns.minhaJogada == "tesoura" && variaveisComuns.jogadaComputador == "papel") ||
+        (variaveisComuns.minhaJogada == "papel" && variaveisComuns.jogadaComputador == "pedra")
+    ) {
+        variaveisComuns.minhasVitoriasContador++;
+        return "Jogador venceu!";
+    } else if (
+        (variaveisComuns.minhaJogada == "pedra" && variaveisComuns.jogadaComputador == "papel") ||
+        (variaveisComuns.minhaJogada == "tesoura" && variaveisComuns.jogadaComputador == "pedra") ||
+        (variaveisComuns.minhaJogada == "papel" && variaveisComuns.jogadaComputador == "tesoura")
+    ) {
+        variaveisComuns.vitoriasComputadorContador++;
+        return "Computador venceu!";
+    }
+};
+
+const ajustaInformacaoQuadros = () => {
+    variaveisDom.quantidadeRodadas.textContent = variaveisComuns.quantidadeRodadasContador;
+    variaveisDom.minhasVitorias.textContent = variaveisComuns.minhasVitoriasContador;
+    variaveisDom.vitoriasComputador.textContent = variaveisComuns.vitoriasComputadorContador;
+    variaveisDom.empates.textContent = variaveisComuns.empatesContador;
+    variaveisDom.voceEscolheu.textContent = variaveisComuns.minhaJogada;
+    variaveisDom.computadorEscolheu.textContent = variaveisComuns.jogadaComputador;
+    variaveisDom.resultado.textContent = variaveisComuns.resultado;
+};
+
+const alertaErro = () => {
+    alert("Selecione uma opção para jogar!");
+};
+
+// Evento botao reset
+variaveisDom.reset.addEventListener("click", () => {
+    limpaVariaveisComuns(variaveisComuns);
+    limpaBotoes(variaveisDom);
+    limpaQuadros(variaveisDom);
 });
 
-// Logica do botao Jogar
-dom.jogar.addEventListener("click", () => {
-    // Capturando minha jogada
-    let minhaJogada = statusBotoes();
-    if (minhaJogada) {
-        // Criando jogada computador
-        let jogadaComputador;
-        const opcoes = ["pedra", "papel", "tesoura"];
-        jogadaComputador = opcoes[Math.trunc(Math.random() * 3)];
-        // Comparar jogadas
-        let resultadoTexto;
-        // Empate
-        if (
-            (minhaJogada == "pedra" && jogadaComputador == "pedra") ||
-            (minhaJogada == "papel" && jogadaComputador == "papel") ||
-            (minhaJogada == "tesoura" && jogadaComputador == "tesoura")
-        ) {
-            resultadoTexto = "Empate!";
-            variaveisComuns.empatesContador++;
-        }
-        // Jogador ganha
-        if (
-            (minhaJogada == "pedra" && jogadaComputador == "tesoura") ||
-            (minhaJogada == "tesoura" && jogadaComputador == "papel") ||
-            (minhaJogada == "papel" && jogadaComputador == "pedra")
-        ) {
-            resultadoTexto = "Jogador venceu!";
-            variaveisComuns.minhasVitoriasContador++;
-        }
-        // Computador ganha
-        if (
-            (minhaJogada == "pedra" && jogadaComputador == "papel") ||
-            (minhaJogada == "tesoura" && jogadaComputador == "pedra") ||
-            (minhaJogada == "papel" && jogadaComputador == "tesoura")
-        ) {
-            resultadoTexto = "Computador venceu!";
-            variaveisComuns.vitoriasComputadorContador++;
-        }
-        // Aumenta numero de rodadas
-        variaveisComuns.quantidadeRodadasContador++;
-        // Desmarca botoes
-        for (let i = 0; i < dom.botoes.length; i++) {
-            dom.botoes[i].checked = false;
-        }
-        // Ajustando informações dos quadros
-        dom.quantidadeRodadas.textContent = variaveisComuns.quantidadeRodadasContador;
-        dom.minhasVitorias.textContent = variaveisComuns.minhasVitoriasContador;
-        dom.vitoriasComputador.textContent = variaveisComuns.vitoriasComputadorContador;
-        dom.empates.textContent = variaveisComuns.empatesContador;
-        dom.voceEscolheu.textContent = minhaJogada;
-        dom.computadorEscolheu.textContent = jogadaComputador;
-        dom.resultado.textContent = resultadoTexto;
-        // Mostrar quadros
-        dom.jogoNaoIniciadoResumo.style.display = "none";
-        dom.jogoNaoIniciadoRodada.style.display = "none";
-        dom.quadroResumo.style.display = "block";
-        dom.quadroRodada.style.display = "block";
+// Evento botao jogar
+variaveisDom.jogar.addEventListener("click", () => {
+    variaveisComuns.minhaJogada = obterMinhaJogada(variaveisDom);
+    if (variaveisComuns.minhaJogada) {
+        variaveisComuns.jogadaComputador = criarJogadaComputador(variaveisComuns);
+        variaveisComuns.resultado = comparaJogadas(variaveisComuns);
+        aumentaNumeroRodadas(variaveisComuns);
+        limpaBotoes(variaveisDom);
+        ajustaInformacaoQuadros(variaveisDom, variaveisComuns);
+        mostraQuadros(variaveisDom);
     } else {
-        alert("Selecione uma opção para jogar!");
+        alertaErro();
     }
 });
