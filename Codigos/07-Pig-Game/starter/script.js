@@ -2,64 +2,119 @@
 
 // Variaveis
 
-const variaveisDOM = {
-    dice: document.querySelector(".dice"),
-    score0: document.querySelector("#score--0"),
-    score1: document.querySelector("#score--1"),
-    current0: document.querySelector("#current--0"),
-    current1: document.querySelector("#current--1"),
-    btnNew: document.querySelector(".btn--new"),
-    btnRoll: document.querySelector(".btn--roll"),
-    btnHold: document.querySelector(".btn--hold"),
+const vDOM = {
+    diceImage: document.querySelector(".dice"),
+    buttonNew: document.querySelector(".btn--new"),
+    buttonRoll: document.querySelector(".btn--roll"),
+    buttonHold: document.querySelector(".btn--hold"),
 };
 
-const variaveisComuns = {
-    score0: 0,
-    score1: 0,
+const player1 = {
+    totalScore: 0,
     currentScore: 0,
-    activePlayer: 0,
+    totalScoreDOM: document.querySelector("#score--0"),
+    currentScoreDOM: document.querySelector("#current--0"),
+    playerBackground: document.querySelector(".player--0"),
 };
+
+const player2 = {
+    totalScore: 0,
+    currentScore: 0,
+    totalScoreDOM: document.querySelector("#score--1"),
+    currentScoreDOM: document.querySelector("#current--1"),
+    playerBackground: document.querySelector(".player--1"),
+};
+
+let activePlayer = player1;
 
 // Funcoes
 
 function newGame() {
-    variaveisComuns.score0 = 0;
-    variaveisComuns.score1 = 0;
-    variaveisComuns.currentScore = 0;
-    variaveisComuns.activePlayer = 0;
-    variaveisDOM.score0.textContent = 0;
-    variaveisDOM.score1.textContent = 0;
-    variaveisDOM.current0.textContent = 0;
-    variaveisDOM.current1.textContent = 0;
+    resetPlayerScore(player1);
+    resetPlayerScore(player2);
+    activePlayer = player1;
+    player1.playerBackground.classList.add("player--active");
+    player2.playerBackground.classList.remove("player--active");
+    player1.playerBackground.classList.remove("player--winner");
+    player2.playerBackground.classList.remove("player--winner");
+    vDOM.diceImage.classList.add("hidden");
+    vDOM.buttonRoll.disabled = false;
+    vDOM.buttonHold.disabled = false;
+}
+
+function resetPlayerScore(player) {
+    player.totalScore = 0;
+    player.currentScore = 0;
+    player.totalScoreDOM.textContent = 0;
+    player.currentScoreDOM.textContent = 0;
+}
+
+function changeActivePlayer() {
+    if (activePlayer === player1) {
+        activePlayer = player2;
+        player1.playerBackground.classList.remove("player--active");
+        player2.playerBackground.classList.add("player--active");
+    } else {
+        activePlayer = player1;
+        player1.playerBackground.classList.add("player--active");
+        player2.playerBackground.classList.remove("player--active");
+    }
+}
+
+function resetCurrentPlayerScore() {
+    activePlayer.currentScore = 0;
+    activePlayer.currentScoreDOM.textContent = 0;
+}
+
+function hideDice() {
+    vDOM.diceImage.classList.add("hidden");
+}
+
+function checkWinner() {
+    if (activePlayer.totalScore >= 20) {
+        activePlayer.playerBackground.classList.remove("player--active");
+        activePlayer.playerBackground.classList.add("player--winner");
+        vDOM.buttonRoll.disabled = true;
+        vDOM.buttonHold.disabled = true;
+    } else {
+        changeActivePlayer();
+    }
+}
+
+function addTotalScore() {
+    activePlayer.totalScore += activePlayer.currentScore;
+    activePlayer.totalScoreDOM.textContent = activePlayer.totalScore;
+}
+
+function addCurrentScore(number) {
+    activePlayer.currentScore += number;
+    activePlayer.currentScoreDOM.textContent = activePlayer.currentScore;
+}
+
+function diceRoll() {
+    return Math.trunc(Math.random() * (6 - 1 + 1)) + 1;
+}
+
+function changeDice(number) {
+    vDOM.diceImage.src = `dice-${number}.png`;
+    vDOM.diceImage.classList.remove("hidden");
 }
 
 function roll() {
-    const diceRoll = Math.trunc(Math.random() * (6 - 1 + 1)) + 1;
-    variaveisDOM.dice.src = `dice-${diceRoll}.png`;
-    variaveisDOM.dice.classList.remove("hidden");
-    if (diceRoll !== 1) {
-        variaveisComuns.currentScore += diceRoll;
-        variaveisDOM.current0.textContent = variaveisComuns.currentScore;
+    const number = diceRoll();
+    changeDice(number);
+    if (number !== 1) {
+        addCurrentScore(number);
     } else {
-        variaveisComuns.currentScore = 0;
-        variaveisComuns.activePlayer = variaveisComuns.activePlayer === 0 ? 1 : 0;
+        resetCurrentPlayerScore();
+        changeActivePlayer();
     }
-    console.log(variaveisComuns);
-    console.log(diceRoll);
 }
 
 function hold() {
-    if (variaveisComuns.activePlayer === 0) {
-        variaveisComuns.score0 += variaveisComuns.currentScore;
-        variaveisDOM.score0.textContent = variaveisComuns.score0;
-        variaveisDOM.current0.textContent = 0;
-    } else {
-        variaveisComuns.score1 += variaveisComuns.currentScore;
-        variaveisDOM.score1.textContent = variaveisComuns.score1;
-        variaveisDOM.current1.textContent = 0;
-    }
-    variaveisComuns.currentScore = 0;
-    variaveisComuns.activePlayer = variaveisComuns.activePlayer === 0 ? 1 : 0;
+    addTotalScore();
+    resetCurrentPlayerScore();
+    checkWinner();
 }
 
 function initGame() {
@@ -68,11 +123,11 @@ function initGame() {
 
 // Eventos
 
-variaveisDOM.btnNew.addEventListener("click", newGame);
+vDOM.buttonNew.addEventListener("click", newGame);
 
-variaveisDOM.btnRoll.addEventListener("click", roll);
+vDOM.buttonRoll.addEventListener("click", roll);
 
-variaveisDOM.btnHold.addEventListener("click", hold);
+vDOM.buttonHold.addEventListener("click", hold);
 
 // Inicio do jogo
 
