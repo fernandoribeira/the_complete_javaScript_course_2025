@@ -87,9 +87,9 @@ Seção 07
     Aula 080 - OK
     Aula 081 - OK
     Aula 082 - OK
-    Aula 083 - 
-    Aula 084 - 
-    Aula 085 - 
+    Aula 083 - OK
+    Aula 084 - OK
+    Aula 085 - OK
     Aula 086 - 
     Aula 087 - 
     Aula 088 - 
@@ -2778,14 +2778,265 @@ Seção 21
         | Audio/Video API   | Controlar mídia                                                          |
         | BOM               | Acessar informações do navegador (`window`, `location`, `history`, etc.) |
 
+- Função Alert
 
+    É uma função do navegador que exibe uma caixa de mensagem na tela. O código fica parado até o usuário clicar em OK.
 
+    Serve para:
 
+    Mostrar avisos
+    Exibir mensagens simples
+    Testar programas durante o desenvolvimento
 
-.textContent
-.value
-.addEventListener
-.style
+    Sintaxe:
 
-Math.random()
-Math.trunc
+    alert(<mensagem>);
+
+    Exemplo:
+
+    alert("Bem-vindo ao jogo!");
+
+- Funções matematicas com Math
+
+    Math.random()
+
+        É um método do objeto Math que gera um número aleatório.
+
+        Sempre retorna um número entre 0 (inclusive) até 1 (exclusivo). Nunca retorna exatamente 1.
+
+        Ou seja:
+
+        0 <= número < 1
+
+        Exemplos:
+
+        0.12345
+        0.98765
+        0.00012
+
+        Sintaxe:
+
+        Math.random()
+
+        Exemplo:
+
+        const numero = Math.random();
+
+    Math.trunc()
+
+        Remove a parte decimal de um número. Não arredonda. Apenas corta.
+
+        Sintaxe:
+
+        Math.trunc(<valor>);
+
+        Exemplo:
+
+        Math.trunc(4.9)
+
+        Resultado:
+
+        4
+
+- Gerar numeros inteiros aleatorios entre range de valores
+
+    Utilizar a formula abaixo:
+
+    Math.trunc(Math.random() * (max - min + 1)) + min;
+
+    Exemplo:
+
+    Gerando de 1 a 10
+
+    const numero = Math.trunc(Math.random() * (10 - 1 + 1)) + 1;
+
+    Gerando de 20 a 50
+
+    const numero = Math.trunc(Math.random() * (50 - 20 + 1)) + 20;
+
+- Adicionando eventos ao HTML
+
+    É utilizado o método "addEventListener()" para isso, ele adiciona um evento a um elemento.
+
+    É uma das funções mais importantes do JavaScript.
+
+    Sintaxe:
+
+    <elemento>.addEventListener(<evento>, <função>);
+
+    Exemplo:
+
+    const botao = document.querySelector(".btn");
+
+    botao.addEventListener("click", function () {
+        console.log("Clicou!");
+    });
+
+    Eventos comuns:
+
+    Evento	    O que faz
+
+    click	    Clique
+    input	    Digitação
+    change	    Mudança de valor
+    submit	    Envio do formulário
+    keydown	    Tecla pressionada
+    keyup	    Tecla solta
+    mouseover	Mouse entrou
+
+    Voce pode inserir a funcao direto no evento ou criar uma função a parte e inserir sua declaração no evento, por exemplo:
+
+    function clicou() {
+        console.log("Clicou!");
+    }
+
+    const botao = document.querySelector(".btn");
+
+    botao.addEventListener("click", clicou);
+
+    Um ponto iportante é nao usar parenteses () pois a funcao nao deve ser chamda e sim passada ao evento.
+
+- Parametro "e" em addEventListener
+
+    Por exemplo o codigo abaixo:
+
+    document.addEventListener("keydown", function (e) {
+        console.log(e.key);
+    });
+
+    A função do addEventListener pode receber um parametro "e" e o que seria este parametro?
+
+    O parâmetro "e" é um objeto criado automaticamente pelo navegador no momento em que o evento acontece.
+
+    Ele é um objeto que contém várias informações sobre o evento que acabou de acontecer.
+
+    O nome "e" é apenas um nome de variável mas é o padrao normalmente utilizado neste caso.
+
+    Seu retorno neste caso é:
+
+    ...
+    key: "Enter"
+    keyCode: 13
+    charCode: 0
+    code: "Enter"
+    ctrlKey: false
+    altKey: false
+    metaKey: false
+    ...
+
+    A propriedade "key" informa a tecla pressionada.
+
+    Dependendo do tipo de evento (clique de mouse por exemplo) estas informações podem ser diferentes.
+
+- Manipulando o DOM com propriedades dos elementos
+
+    .textContent
+
+        Lê ou altera o texto de um elemento HTML.
+
+        Exemplo:
+
+        <p class="mensagem">Olá</p>
+
+        Ler o texto:
+        const msg = document.querySelector(".mensagem");
+
+        Alterar o texto:
+        msg.textContent = "Você ganhou!";
+
+    .value
+
+        Obtém ou altera o valor de campos de formulário.
+
+        É usado em:
+
+        input
+        textarea
+        select
+
+        Exemplo:
+
+        <input class="numero">
+
+        Ler o valor:
+        const campo = document.querySelector(".numero");
+
+        Alterar o valor:
+
+        campo.value = "";
+
+    .style
+
+        Permite alterar estilos CSS diretamente pelo JavaScript.
+
+        Exemplo:
+
+        <p class="texto">Olá</p>
+
+        const texto = document.querySelector(".texto");
+        texto.style.color = "red";
+        texto.style.backgroundColor = "yellow";
+
+        Observe que propriedades CSS com hífen (background-color) viram camelCase (backgroundColor) no JavaScript.
+
+    .classList
+
+        Permite manipular classes CSS. É muito melhor do que alterar .style várias vezes.
+
+        Exemplos:
+
+        Adicionar classe
+        elemento.classList.add("hidden");
+
+        Remover classe
+        elemento.classList.remove("hidden");
+
+        Alternar
+        elemento.classList.toggle("hidden");
+
+        Funcionamento:
+
+        Se existir: remove
+        Se não existir: adiciona
+        Verificar (retorna true ou false): elemento.classList.contains("hidden")
+
+    .disabled
+
+        Habilita ou desabilita elementos.
+
+        Muito usado em botões.
+
+        Exemplo:
+
+        botao.disabled = true;
+        botao.disabled = false;
+
+        Também funciona em:
+
+        input
+        select
+        textarea
+
+    .checked
+
+        Indica se um checkbox ou radio está marcado.
+
+        Retorna true ou false.
+
+        Exemplo:
+
+        <input type="checkbox" class="aceite">
+
+        const aceite = document.querySelector(".aceite");
+        console.log(aceite.checked);
+
+        Se estiver marcado true senao retorna false
+
+        Também pode marcar pelo JavaScript:
+
+        aceite.checked = true;
+
+        Ou desmarcar:
+
+        aceite.checked = false;
+
