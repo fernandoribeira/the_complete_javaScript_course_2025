@@ -94,8 +94,23 @@ Seção 07
     Aula 087 - OK
     Aula 088 - OK
     Aula 089 - OK
-    Aula 090 - 
+    Aula 090 - OK
 Seção 08
+    Aula 091 - OK
+    Aula 092 - OK
+    Aula 093 - OK
+    Aula 094 - OK
+    Aula 095 - OK
+    Aula 096 - 
+    Aula 097 - 
+    Aula 098 - 
+    Aula 099 - 
+    Aula 100 - 
+    Aula 101 - 
+    Aula 102 - 
+    Aula 103 - 
+    Aula 104 - 
+    Aula 105 - 
 Seção 09
 Seção 10
 Seção 11
@@ -3040,3 +3055,1515 @@ Seção 21
 
         aceite.checked = false;
 
+- O que é JavaScript (de forma simples)
+
+    "JavaScript é uma linguagem de programação de alto nível, orientada a objetos e multiparadigma."
+
+    De forma simples:
+
+    JavaScript é uma linguagem de alto nível (fácil para humanos escreverem), orientada a objetos (permite organizar o código em objetos) e multiparadigma (suporta diferentes estilos de programação, como procedural, orientação a objetos e funcional).
+
+- O que é JavaScript (de forma complexa)
+
+    "JavaScript é uma linguagem de programação de alto nível, orientada a objetos baseada em protótipos, multiparadigma, interpretada ou compilada Just-In-Time (JIT), tipagem dinâmica, de thread única, com coleta automática de lixo, que possui funções de primeira classe e um modelo de concorrência baseado em um loop de eventos não bloqueante."
+
+    De forma detalhada:
+
+    Alto nível:
+
+        O JavaScript esconde os detalhes mais complexos do computador. Você escreve código pensando na lógica do programa, enquanto a linguagem cuida da memória e da comunicação com o sistema operacional.
+
+    Orientada a objetos baseada em protótipos:
+
+        Em vez de herdar comportamento apenas por meio de classes os objetos podem herdar diretamente de outros objetos através dos protótipos.
+
+    Multiparadigma:
+
+        O JavaScript não obriga você a programar de uma única forma.
+
+        Você pode escrever código:
+
+        Procedural
+        Orientado a objetos
+        Funcional
+
+    Interpretada ou compilada JIT:
+
+        Antigamente o JavaScript era apenas interpretado.
+
+        Hoje, motores modernos como o V8 (Chrome e Node.js) compilam o código em linguagem de máquina durante a execução (Just-In-Time Compilation), tornando-o muito mais rápido.
+
+        Você continua escrevendo JavaScript normalmente; essa otimização acontece "por baixo dos panos".
+
+    Tipagem Dinâmica:
+
+        O tipo das variáveis não precisa ser declarado.
+
+        Além disso, uma variável pode mudar de tipo durante a execução.
+
+        Tudo isso é permitido.
+
+    Thread única:
+
+        O JavaScript possui uma única thread principal de execução.
+
+        Isso significa que ele executa uma instrução após a outra, em sequência.
+
+        Apesar disso, ele consegue lidar com várias tarefas "ao mesmo tempo" graças ao Event Loop.
+
+    Coleta automática de lixo:
+
+        Quando um objeto não é mais utilizado, o JavaScript libera automaticamente a memória ocupada por ele.
+
+        O programador normalmente não precisa se preocupar em liberar memória manualmente.
+
+    Funções de primeira classe:
+
+        As funções são tratadas como qualquer outro valor.
+
+        Você pode:
+
+        Guardar uma função em uma variável
+        Passar uma função como parâmetro
+        Retornar uma função de outra função
+
+    Modelo de concorrência com Event Loop não bloqueante:
+
+        Mesmo sendo single-threaded, o JavaScript não fica parado esperando operações demoradas.
+
+        Enquanto essas operações acontecem, o JavaScript continua executando o restante do código e só volta para elas quando estiverem prontas.
+
+        É isso que torna aplicações web e servidores em Node.js responsivos.
+
+- O que é um JavaScript Runtime
+
+    Um JavaScript Runtime é o ambiente completo onde o JavaScript é executado.
+
+    Ele é composto pela JavaScript Engine mais várias ferramentas e recursos que permitem ao JavaScript fazer coisas úteis, como acessar o DOM, ler arquivos, fazer requisições de rede, usar temporizadores etc.
+
+    Resumindo: a Engine executa o código; o Runtime fornece tudo o que o código precisa para funcionar.
+
+    Exemplo do Runtime do navegador
+
+        Quando o JavaScript roda no navegador, ele tem acesso a recursos como:
+
+        Navegador (Runtime)
+        │
+        ├── JavaScript Engine
+        ├── DOM
+        ├── Web APIs
+        ├── Event Loop
+        └── Callback Queue
+
+    O que cada parte faz?
+
+        JavaScript Engine : Executa o código JavaScript.
+        DOM : Permite modificar a página HTML.
+        Web APIs : Recursos fornecidos pelo navegador, como fetch(), setTimeout(), geolocalização, áudio, vídeo etc.
+        Event Loop : Coordena a execução de tarefas assíncronas.
+        Callback Queue : Fila onde ficam funções aguardando sua vez de serem executadas.
+
+- O que é um JavaScript Engine
+
+    Uma JavaScript Engine (Motor JavaScript) é um programa responsável por ler, interpretar, otimizar e executar o código JavaScript.
+
+    Ou seja, quando você escreve:
+
+    console.log("Olá Mundo");
+
+    Quem realmente executa esse código é a JavaScript Engine, e não o navegador diretamente.
+
+    Pense nela como um tradutor entre o código JavaScript e o processador do computador.
+
+    Imagine que você escreveu um livro em português.
+
+    O processador do computador só entende uma linguagem muito simples (código de máquina).
+
+    A JavaScript Engine é um tradutor que lê seu português e o converte para uma linguagem que o processador consegue executar.
+
+    Seu código JavaScript
+            │
+            ▼
+    JavaScript Engine
+            │
+            ▼
+    Código de Máquina
+            │
+            ▼
+    Processador
+
+    Onde existe uma JavaScript Engine?
+
+        Todo ambiente que executa JavaScript possui uma Engine.
+
+        Alguns exemplos:
+
+        | Ambiente        | Engine         |
+        | --------------- | -------------- |
+        | Google Chrome   | V8             |
+        | Microsoft Edge  | V8             |
+        | Node.js         | V8             |
+        | Mozilla Firefox | SpiderMonkey   |
+        | Safari          | JavaScriptCore |
+
+        Cada uma faz a mesma coisa, mas possui implementações diferentes.
+
+    Como ela funciona?
+
+        De forma simplificada, o processo é este:
+
+        Código JavaScript
+            │
+            ▼
+        1. Parser
+            │
+            ▼
+        2. AST (Árvore Sintática)
+            │
+            ▼
+        3. Bytecode
+            │
+            ▼
+        4. Interpretador
+            │
+            ▼
+        5. Compilador JIT
+            │
+            ▼
+        Código de Máquina
+            │
+            ▼
+        Processador
+
+        Vamos entender cada etapa.
+
+        1. Parser
+
+        O parser lê seu código e verifica se existe algum erro de sintaxe.
+
+        2. AST (Abstract Syntax Tree)
+
+        O código é transformado em uma árvore que representa sua estrutura.
+
+        3. Bytecode
+
+        A árvore é convertida para um código intermediário chamado bytecode. Ele é mais simples que JavaScript, mas ainda não é código de máquina.
+
+        4. Interpretador
+
+        O interpretador começa a executar o bytecode imediatamente. Isso faz os programas iniciarem rapidamente.
+
+        5. Compilador JIT
+
+        Enquanto o programa roda, a Engine observa quais partes do código são executadas muitas vezes. Essas partes são compiladas para código de máquina. Assim elas passam a executar muito mais rápido.
+
+    A Engine faz apenas isso?
+
+        Não.
+
+        Ela também cuida de diversas outras tarefas importantes.
+
+        Por exemplo:
+
+        Gerenciamento de memória
+
+        Quando você cria um objeto a engine reserva memória automaticamente.
+
+        Garbage Collector
+
+        Quando esse objeto não é mais utilizado a engine percebe que ninguém mais usa aquele objeto e libera a memória automaticamente.
+
+        Otimizações
+
+        Ela tenta descobrir formas de executar o código mais rapidamente.
+
+        Por exemplo:
+
+        Otimiza loops
+        Otimiza funções chamadas muitas vezes
+        Reutiliza memória
+        Remove trabalho desnecessário
+
+        Tudo isso acontece sem que o programador precise fazer nada.
+
+    Diferença entre JavaScript Engine × Runtime
+
+        Essa diferença costuma confundir quem está começando.
+
+        JavaScript Engine é quem executa o código JavaScript.
+
+        Runtime é o ambiente completo onde o JavaScript roda.
+
+        Por exemplo:
+
+        No navegador:
+
+        Navegador
+        │
+        ├── DOM
+        ├── Web APIs
+        ├── Event Loop
+        └── JavaScript Engine
+
+        No Node.js:
+
+        Node.js
+        │
+        ├── Sistema de arquivos
+        ├── Rede
+        ├── Event Loop
+        └── V8 (Engine)
+
+        A Engine é apenas uma parte do ambiente de execução (runtime).
+
+- Como funciona atualmente a forma de interpretador / compilador JIT do JavaScript
+
+    Atualmente, JavaScript não é apenas interpretado nem apenas compilado. Os motores modernos (como o V8 do Chrome e Node.js, SpiderMonkey do Firefox e JavaScriptCore do Safari) usam uma combinação de interpretação e compilação JIT (Just-In-Time).
+
+    Vamos ver o processo de forma simples.
+
+    Passo 1: Você escreve o código
+
+        function soma(a, b) {
+            return a + b;
+        }
+
+        console.log(soma(5, 3));
+
+        Esse código é apenas texto.
+
+    Passo 2: O motor lê o código (Parser)
+
+        O primeiro passo é analisar o código para verificar se ele está correto.
+
+        Por exemplo:
+
+        let x = ;
+
+        Aqui o parser detecta um erro de sintaxe antes mesmo do programa começar.
+
+    Passo 3: É criada a AST (Abstract Syntax Tree)
+
+        O código é transformado em uma estrutura em árvore.
+
+        Não é exatamente assim, mas imagine algo parecido:
+
+        Function
+        ├── nome: soma
+        ├── parâmetros
+        │     ├── a
+        │     └── b
+        └── return
+            └── +
+                ├── a
+                └── b
+
+        Essa árvore facilita o entendimento do código pelo motor.
+
+    Passo 4: Geração de Bytecode
+
+        A AST é convertida para um bytecode.
+
+        O bytecode é uma linguagem intermediária, muito mais simples para o computador entender do que o JavaScript, mas ainda não é código de máquina.
+
+        É algo parecido com:
+
+        Load a
+        Load b
+        Add
+        Return
+
+        Você nunca vê esse bytecode.
+
+    Passo 5: O Interpretador executa o bytecode
+
+        O interpretador começa a executar o programa imediatamente.
+
+        Isso faz o JavaScript iniciar rapidamente, sem precisar compilar tudo antes.
+
+    Passo 6: O motor observa o código
+
+        Enquanto o programa roda, o motor coleta informações como:
+
+        Quais funções são chamadas muitas vezes
+        Quais tipos de dados aparecem
+        Quais partes do código são mais utilizadas
+
+        Exemplo:
+
+        for (let i = 0; i < 1000000; i++) {
+            soma(i, i);
+        }
+
+        A função soma() será chamada um milhão de vezes.
+
+        O motor percebe que vale a pena otimizá-la.
+
+    Passo 7: Entra o compilador JIT
+
+        Nesse momento, o compilador Just-In-Time converte essa função diretamente em código de máquina do processador.
+
+        Depois disso, ela passa a executar muito mais rapidamente.
+
+        Passo 8: Se necessário, ele desfaz a otimização
+
+        Imagine que durante muito tempo a função recebeu apenas números:
+
+        soma(5, 8)
+
+        O compilador otimiza pensando nisso.
+
+        Depois aparece:
+
+        soma("5", "8")
+
+        Agora a função está trabalhando com strings.
+
+        A otimização anterior pode não servir mais.
+
+        O motor então faz uma desotimização (deoptimization) e gera uma nova versão mais adequada.
+
+        Isso acontece automaticamente.
+
+    Fluxo resumido:
+
+        Código JavaScript
+                │
+                ▼
+            Parser
+                │
+                ▼
+            AST
+                │
+                ▼
+            Bytecode
+                │
+                ▼
+        Interpretador
+                │
+                ▼
+        Monitora o desempenho
+                │
+                ▼
+        Compilador JIT
+                │
+                ▼
+        Código de máquina otimizado
+
+    E por que não compilar tudo logo no início?
+
+    Porque isso faria a inicialização demorar mais.
+
+    Imagine um site com 500 mil linhas de JavaScript.
+
+    Talvez apenas 10% do código seja realmente usado quando a página abre.
+
+    Compilar tudo antes seria desperdício.
+
+    O JIT compila apenas as partes "quentes" (hot code), ou seja, as que são executadas repetidamente.
+
+- O que é Execution Context
+
+    Um Execution Context (Contexto de Execução) é uma estrutura interna criada pelo motor JavaScript sempre que um trecho de código precisa ser executado.
+
+    Ele contém todas as informações necessárias para que aquele código possa ser executado corretamente.
+
+    Essas informações incluem:
+
+        As variáveis declaradas naquele contexto.
+        As funções declaradas naquele contexto.
+        Os parâmetros recebidos (quando for uma função).
+        O valor de "this".
+        A referência ao contexto externo (escopo léxico), que permite acessar variáveis de contextos superiores.
+
+    É importante entender que o Execution Context não é algo que você cria manualmente. Ele é criado automaticamente pela JavaScript Engine.
+
+    Quais tipos de Execution Context existem?
+
+        Na prática, para quem está começando, existem dois principais:
+
+        Global Execution Context
+        Function Execution Context
+
+    O que é o Global Execution Context?
+
+        O Global Execution Context é o primeiro contexto criado quando um programa JavaScript começa a ser executado.
+
+        Existe apenas um Global Execution Context durante a execução de um script.
+
+        Considere este código:
+
+        let nome = "Fernando";
+
+        function saudacao() {
+            console.log("Olá");
+        }
+
+        const idade = 47;
+
+        Antes mesmo da primeira linha ser executada, o motor JavaScript cria o Global Execution Context.
+
+        É nele que ficam registradas todas as declarações feitas fora de funções.
+
+        Nesse exemplo, o contexto global conterá informações como:
+
+        Global Execution Context
+
+        Variáveis:
+        nome
+        idade
+
+        Funções:
+        saudacao()
+
+        Quando a execução chega ao final do arquivo, esse contexto continua existindo enquanto o programa estiver em execução.
+
+        No navegador, por exemplo, ele permanece enquanto a página estiver aberta.
+
+    O contexto global representa todo o arquivo?
+
+        Em um script simples, sim.
+
+        Todo código que está fora de funções pertence ao contexto global.
+
+        Exemplo:
+
+        let x = 10;
+
+        console.log(x);
+
+        function teste() {
+        }
+
+        As três instruções acima pertencem ao contexto global.
+
+    O que acontece quando uma função é chamada?
+
+        Quando uma função é executada, o JavaScript cria um novo Execution Context exclusivamente para ela.
+
+        Exemplo:
+
+        function soma(a, b) {
+            let resultado = a + b;
+            return resultado;
+        }
+
+        soma(5, 8);
+
+        Quando soma(5, 8) é chamada, é criado um novo contexto contendo:
+
+        Function Execution Context
+
+        Parâmetros:
+        a = 5
+        b = 8
+
+        Variáveis:
+        resultado
+
+        this
+
+        Escopo externo
+
+        Esse contexto existe apenas durante a execução da função.
+
+        Quando ela termina, ele é removido.
+
+    Por que criar um novo contexto para cada função?
+
+        Porque cada chamada da função pode ter valores diferentes.
+
+        Veja:
+
+        function soma(a, b) {
+            return a + b;
+        }
+
+        soma(2, 3);
+        soma(10, 20);
+
+        Cada chamada possui seus próprios valores de "a" e "b".
+
+        A primeira chamada cria um contexto semelhante a:
+
+        a = 2
+        b = 3
+
+        A segunda cria outro:
+
+        a = 10
+        b = 20
+
+        Os dois contextos são independentes.
+
+    O que existe dentro de um Execution Context?
+
+        Podemos dividir em algumas partes principais.
+
+        Variáveis
+
+            let nome = "Fernando";
+
+            O contexto sabe que existe uma variável chamada `nome`.
+
+        Funções
+
+            function calcular() {
+            }
+
+            O contexto registra que existe uma função chamada `calcular`.
+
+        Parâmetros
+
+            function soma(a, b) {
+            }
+
+            Quando a função é chamada:
+
+            soma(5, 10);
+
+            o contexto armazena:
+
+            a = 5
+            b = 10
+
+        this
+
+            Todo contexto possui um valor para this.
+
+            O significado de this depende da forma como a função foi chamada.
+
+        Referência ao contexto externo (escopo léxico)
+
+            Esse é um dos pontos mais importantes.
+
+            Veja:
+
+            let nome = "Fernando";
+
+            function mostrar() {
+                console.log(nome);
+            }
+
+            mostrar();
+
+            Dentro de mostrar() não existe nenhuma variável chamada nome.
+
+            Mesmo assim o código funciona.
+
+            Por quê?
+
+            Porque o contexto da função possui uma referência ao contexto onde ela foi criada.
+
+            Assim, quando não encontra nome localmente, o JavaScript procura no contexto externo.
+
+    Qual o ciclo de vida de um Execution Context?
+
+        Todo contexto passa por duas etapas principais.
+
+        Fase de criação (Creation Phase)
+
+            Primeiro o JavaScript prepara o contexto.
+
+            Nessa fase ele:
+
+            Registra as funções
+            Registra as variáveis
+            Cria espaço para elas
+            Define o valor de this
+            Estabelece o escopo externo
+
+            Ainda não executa as instruções.
+
+        Fase de execução (Execution Phase)
+
+            Agora as instruções começam a ser executadas.
+
+            Exemplo:
+
+            let x = 10;
+
+            console.log(x);
+
+            É nessa fase que:
+
+            x recebe o valor 10
+            console.log() é executado
+
+    O que acontece quando uma função chama outra?
+
+        Considere:
+
+        function A() {
+            B();
+        }
+
+        function B() {
+            C();
+        }
+
+        function C() {
+            console.log("Fim");
+        }
+
+        A();
+
+        A sequência é:
+
+        1. Existe o contexto global.
+        2. A() é chamada e cria um novo contexto.
+        3. Dentro de A(), chama B() e cria outro contexto.
+        4. Dentro de B(), chama C() e cria outro contexto.
+        5. C() termina e seu contexto é removido.
+        6. B() continua e termina e seu contexto é removido.
+        7. A() termina e seu contexto é removido.
+        8. Resta apenas o contexto global.
+
+        Essa sequência será organizada pela Call Stack.
+
+- O que é Call Stack
+
+    O JavaScript cria um Execution Context para executar o código. Agora surge a pergunta:
+
+    Se existem vários Execution Contexts, como o JavaScript sabe qual deve executar primeiro?
+
+    A resposta é: Call Stack.
+
+    O que é a Call Stack?
+
+        A Call Stack (Pilha de Chamadas) é uma estrutura de dados utilizada pela JavaScript Engine para organizar e controlar a execução dos Execution Contexts.
+
+        Ela determina qual código está sendo executado no momento e para qual código o JavaScript deve voltar quando uma função termina.
+
+        É importante entender que a Call Stack não executa o código. Quem executa é a JavaScript Engine. A Call Stack apenas organiza a ordem em que os Execution Contexts são executados.
+
+    Por que ela se chama "Stack" (Pilha)?
+
+        Porque ela utiliza a estrutura de dados chamada pilha (Stack), que segue a regra LIFO (Last In, First Out):
+
+        O último elemento que entra é o primeiro que sai.
+
+        Imagine a seguinte sequência:
+
+        Entrou A
+        Entrou B
+        Entrou C
+
+        A saída obrigatoriamente será:
+
+        Sai C
+        Sai B
+        Sai A
+
+        A Call Stack funciona exatamente dessa maneira.
+
+    Como a Call Stack começa?
+
+        Considere este código:
+
+        let nome = "Fernando";
+
+        function saudacao() {
+            console.log("Olá");
+        }
+
+        Quando o programa começa, a JavaScript Engine cria o Global Execution Context.
+
+        Esse contexto é colocado na Call Stack.
+
+        Neste momento temos:
+
+        Call Stack
+
+        ┌─────────────────────────┐
+        │ Global Execution Context│
+        └─────────────────────────┘
+
+        Enquanto o programa estiver executando, sempre existirá pelo menos o contexto global na pilha.
+
+    O que acontece quando uma função é chamada?
+
+        Agora veja:
+
+        function saudacao() {
+            console.log("Olá");
+        }
+
+        saudacao();
+
+        Inicialmente:
+
+        Call Stack
+
+        ┌─────────────────────────┐
+        │ Global Execution Context│
+        └─────────────────────────┘
+
+        Quando a linha
+
+        saudacao();
+
+        é executada, o JavaScript cria um novo Function Execution Context.
+
+        Esse contexto é colocado no topo da pilha.
+
+        Agora temos:
+
+        Call Stack
+
+        ┌─────────────────────────┐
+        │ saudacao()              │ ← sendo executado
+        ├─────────────────────────┤
+        │ Global Execution Context│
+        └─────────────────────────┘
+
+        Observe que o contexto global continua existindo.
+
+        Ele apenas fica aguardando enquanto a função é executada.
+
+    O que acontece quando a função termina?
+
+        Depois que a função termina:
+
+        console.log("Olá");
+
+        seu contexto não é mais necessário.
+
+        Ele é removido da Call Stack.
+
+        Voltamos para:
+
+        Call Stack
+
+        ┌─────────────────────────┐
+        │ Global Execution Context│
+        └─────────────────────────┘
+
+        A execução continua exatamente do ponto onde a função foi chamada.
+
+    Exemplo com várias funções
+
+        Considere:
+
+        function A() {
+            B();
+        }
+
+        function B() {
+            C();
+        }
+
+        function C() {
+            console.log("Fim");
+        }
+
+        A();
+
+        Vamos acompanhar a pilha.
+
+        Início:
+
+            Call Stack
+
+            ┌─────────────────────────┐
+            │ Global                  │
+            └─────────────────────────┘
+
+        Chamada de A():
+
+            Call Stack
+
+            ┌─────────────────────────┐
+            │ A                       │
+            ├─────────────────────────┤
+            │ Global                  │
+            └─────────────────────────┘
+
+        Dentro de A() é chamada B():
+
+            Call Stack
+
+            ┌─────────────────────────┐
+            │ B                       │
+            ├─────────────────────────┤
+            │ A                       │
+            ├─────────────────────────┤
+            │ Global                  │
+            └─────────────────────────┘
+
+        Dentro de B() é chamada C():
+
+            Call Stack
+
+            ┌─────────────────────────┐
+            │ C                       │ ← executando
+            ├─────────────────────────┤
+            │ B                       │
+            ├─────────────────────────┤
+            │ A                       │
+            ├─────────────────────────┤
+            │ Global                  │
+            └─────────────────────────┘
+
+        C termina:
+
+            Call Stack
+
+            ┌─────────────────────────┐
+            │ B                       │
+            ├─────────────────────────┤
+            │ A                       │
+            ├─────────────────────────┤
+            │ Global                  │
+            └─────────────────────────┘
+
+        B termina:
+
+            Call Stack
+
+            ┌─────────────────────────┐
+            │ A                       │
+            ├─────────────────────────┤
+            │ Global                  │
+            └─────────────────────────┘
+
+        A termina:
+
+            Call Stack
+
+            ┌─────────────────────────┐
+            │ Global                  │
+            └─────────────────────────┘
+
+        Esse comportamento acontece milhares de vezes por segundo.
+
+        Apenas o topo da pilha executa
+
+        Uma característica muito importante é:
+
+        A JavaScript Engine executa apenas o Execution Context que está no topo da Call Stack.
+
+        Enquanto uma função estiver sendo executada, todas as funções abaixo dela ficam aguardando.
+
+        Por isso o JavaScript é considerado single-threaded: existe apenas uma Call Stack principal executando código.
+
+    O que acontece se uma função demora muito?
+
+        Veja:
+
+        function calcular() {
+            // operação muito demorada
+        }
+
+        calcular();
+
+        console.log("Fim");
+
+        Enquanto calcular() estiver na Call Stack, o JavaScript não pode executar:
+
+        console.log("Fim");
+
+        Primeiro calcular() precisa terminar.
+
+        Só então ela será removida da pilha.
+
+        Depois disso, a execução continua.
+
+    O que é um Stack Overflow?
+
+        Talvez você já tenha visto o erro:
+
+        Maximum call stack size exceeded
+
+        Isso acontece quando a Call Stack fica grande demais.
+
+        O caso mais comum é uma recursão infinita:
+
+        function repetir() {
+            repetir();
+        }
+
+        repetir();
+
+        O que acontece?
+
+        A Call Stack fica assim:
+
+        Global
+        repetir()
+        repetir()
+        repetir()
+        repetir()
+        repetir()
+        ...
+
+        Como nenhuma chamada termina, novos Execution Contexts continuam sendo empilhados.
+
+        Em algum momento o limite de memória da pilha é atingido.
+
+        Então o JavaScript interrompe o programa com o erro:
+
+        Maximum call stack size exceeded
+
+    Relação entre Execution Context e Call Stack
+
+        Agora podemos juntar os dois conceitos.
+
+        O Execution Context é o ambiente criado para executar um trecho de código.
+
+        A Call Stack é a estrutura que organiza esses ambientes.
+
+        Ou seja:
+
+        A JavaScript Engine cria um Execution Context.
+        Esse contexto é colocado na Call Stack.
+        O contexto que está no topo da pilha é executado.
+        Quando termina, é removido.
+        A execução continua no contexto anterior.
+
+        Sem a Call Stack, a Engine não saberia qual função executar nem para qual função retornar após o término de outra.
+
+- O que é Callback Queue
+
+    Sabemos que o JavaScript é single-threaded, ou seja, ele possui apenas uma Call Stack.
+
+    Imagine este código:
+
+    console.log("Início");
+
+    // operação que demora 5 segundos
+
+    console.log("Fim");
+
+    Se essa operação demorasse 5 segundos e o JavaScript ficasse esperando, durante esses 5 segundos absolutamente nada mais poderia ser executado.
+
+    A página travaria.
+
+    O navegador deixaria de responder.
+
+    Para resolver esse problema existe o Runtime, que possui alguns componentes importantes:
+
+    Runtime
+
+    ├── JavaScript Engine
+    ├── Call Stack
+    ├── Web APIs
+    ├── Callback Queue
+    └── Event Loop
+
+    O que é a Callback Queue?
+
+        A Callback Queue (Fila de Callbacks) é uma fila onde ficam armazenadas funções que já estão prontas para serem executadas, mas ainda não podem entrar na Call Stack.
+
+        Essa definição é extremamente importante.
+
+        Ela não executa nada.
+
+        Ela apenas espera.
+
+    O que é um callback?
+
+        Antes de continuar, precisamos entender a palavra callback.
+
+        Um callback é simplesmente uma função que será executada mais tarde.
+
+        Exemplo:
+
+        function mostrarMensagem() {
+            console.log("Olá");
+        }
+
+        Essa é apenas uma função.
+
+        Agora:
+
+        setTimeout(mostrarMensagem, 3000);
+
+        Aqui estamos dizendo:
+
+        Daqui a 3 segundos execute mostrarMensagem.
+
+        Nesse momento mostrarMensagem passa a ser um callback.
+
+        Ela será chamada futuramente.
+
+    O caminho de um callback
+
+        Veja este código:
+
+        console.log("A");
+
+        setTimeout(function () {
+            console.log("B");
+        }, 3000);
+
+        console.log("C");
+
+        Vamos acompanhar passo a passo.
+
+        Passo 1:
+
+            O programa começa.
+
+            A Call Stack contém apenas o contexto global.
+
+            Call Stack
+
+            ┌───────────────┐
+            │ Global        │
+            └───────────────┘
+
+        Passo 2:
+
+            Executa:
+
+            console.log("A");
+
+            Resultado:
+
+            A
+
+        Passo 3:
+
+            Agora encontra:
+
+            setTimeout(...)
+
+            Muita gente acha que o JavaScript espera 3 segundos.
+
+            Não espera.
+
+            O que acontece é:
+
+            A JavaScript Engine entrega essa tarefa para uma Web API do navegador.
+
+            A Web API passa a contar os 3 segundos.
+
+            Enquanto isso, a Call Stack continua livre.
+
+        Passo 4:
+
+            O JavaScript continua normalmente.
+
+            Executa:
+
+            console.log("C");
+
+            Resultado:
+
+            A
+            C
+
+            Observe que os 3 segundos ainda nem terminaram.
+
+        Passo 5:
+
+            Depois de 3 segundos...
+
+            A Web API termina seu trabalho.
+
+            Ela não coloca a função diretamente na Call Stack.
+
+            Ela coloca na Callback Queue.
+
+            Agora temos:
+
+            Callback Queue
+
+            ┌──────────────────────┐
+            │ console.log("B")     │
+            └──────────────────────┘
+
+            A função está pronta.
+
+            Mas ainda não está sendo executada.
+
+    Por que ela não vai direto para a Call Stack?
+
+        Porque talvez a Call Stack esteja ocupada.
+
+        Imagine:
+
+        function calculoGigante() {
+            // demora vários segundos
+        }
+
+        Enquanto essa função estiver executando:
+
+        Call Stack
+
+        ┌───────────────┐
+        │ calculoGigante│
+        ├───────────────┤
+        │ Global        │
+        └───────────────┘
+
+        Não é possível colocar outra função na pilha.
+
+        A regra da Call Stack é:
+
+        Apenas um Execution Context pode ser executado por vez.
+
+        Então o callback precisa esperar.
+
+        É exatamente para isso que existe a Callback Queue.
+
+        Ela funciona como uma fila
+
+        A Callback Queue segue a regra FIFO (First In, First Out).
+
+        Quem chega primeiro é executado primeiro.
+
+        Imagine:
+
+        setTimeout(A, 1000);
+
+        setTimeout(B, 1000);
+
+        setTimeout(C, 1000);
+
+        Depois de um segundo:
+
+        Callback Queue
+
+        ┌───────┐
+        │ A     │
+        ├───────┤
+        │ B     │
+        ├───────┤
+        │ C     │
+        └───────┘
+
+        A ordem será:
+
+        A
+        B
+        C
+
+    A Callback Queue executa alguma coisa?
+
+        Não.
+
+        Esse é um erro muito comum.
+
+        A Callback Queue:
+
+        Não executa funções
+        Não cria Execution Contexts
+        Não coloca funções na Call Stack
+
+        Ela apenas armazena callbacks que já estão prontos.
+
+    Então quem tira da fila?
+
+        Esse é justamente o trabalho do Event Loop.
+
+        Ele fica verificando continuamente:
+
+        A Call Stack está vazia?
+        Existe alguma função esperando na Callback Queue?
+
+        Se a resposta for "sim", ele move a primeira função da fila para a Call Stack.
+
+    Um detalhe importante
+
+    A Callback Queue não serve apenas para `setTimeout().
+
+    Várias operações assíncronas utilizam esse mecanismo (ou mecanismos muito parecidos), por exemplo:
+
+    Eventos de clique (click)
+    Teclado (keydown)
+    Mouse (mousemove)
+    Mensagens de rede
+    Algumas operações do Node.js
+
+    Sempre que uma operação termina e precisa executar um callback, ele normalmente passa primeiro pela fila apropriada.
+
+- O que é Event Loop
+
+    O Event Loop é um componente do JavaScript Runtime responsável por monitorar continuamente a Call Stack e as filas de tarefas (como a Callback Queue) para decidir quando um callback pode voltar a ser executado.
+
+    Ele não executa o código.
+
+    Quem executa o código continua sendo a JavaScript Engine.
+
+    O Event Loop apenas coordena quando uma função pode voltar para a Call Stack.
+
+    Por que o Event Loop existe?
+
+        Lembre-se de uma característica importante do JavaScript:
+
+        Existe apenas uma Call Stack principal.
+
+        Isso significa que apenas uma função pode estar sendo executada por vez.
+
+        Agora imagine este código:
+
+        console.log("A");
+
+        setTimeout(() => {
+            console.log("B");
+        }, 1000);
+
+        console.log("C");
+
+        O resultado é:
+
+        A
+        C
+        B
+
+        Mas por quê?
+
+        É exatamente isso que o Event Loop torna possível.
+
+    O funcionamento completo
+
+        Vamos acompanhar tudo o que acontece.
+
+        Passo 1 — O programa começa
+
+            O Runtime cria o Global Execution Context.
+
+            A Call Stack fica assim:
+
+            Call Stack
+
+            ┌────────────────────┐
+            │ Global             │
+            └────────────────────┘
+
+        Passo 2 — Executa console.log("A")
+
+            A Engine executa normalmente.
+
+            Resultado:
+
+            A
+
+        Passo 3 — Encontra setTimeout
+
+            setTimeout(() => {
+                console.log("B");
+            }, 1000);
+
+            Aqui acontece algo importante.
+
+            O JavaScript não espera um segundo.
+
+            Em vez disso:
+
+            1. A Engine encontra setTimeout().
+            2. O Runtime envia essa tarefa para uma Web API.
+            3. A Web API começa a contar 1 segundo.
+            4. A Engine continua executando o restante do código.
+
+            A Call Stack não fica bloqueada.
+
+        Passo 4 — Executa console.log("C")
+
+            Resultado:
+
+            A
+            C
+
+            Neste momento, a Call Stack termina sua execução.
+
+            Fica apenas o contexto global.
+
+        Passo 5 — O temporizador termina
+
+            Depois de um segundo, a Web API termina seu trabalho.
+
+            Ela coloca o callback na Callback Queue.
+
+            Callback Queue
+
+            ┌────────────────────┐
+            │ console.log("B")   │
+            └────────────────────┘
+
+            Ainda não aconteceu nenhuma execução.
+
+            A função apenas está esperando.
+
+        Passo 6 — O Event Loop entra em ação
+
+        O Event Loop verifica continuamente duas coisas:
+
+        1. A Call Stack está vazia?
+        2. Existe algum callback esperando?
+
+        Neste momento:
+
+        Call Stack
+
+        (vazia)
+
+        Callback Queue
+
+        ┌────────────────────┐
+        │ console.log("B")   │
+        └────────────────────┘
+
+        Como ambas as condições foram satisfeitas, o Event Loop move o callback para a Call Stack.
+
+        Agora temos:
+
+        Call Stack
+
+        ┌────────────────────┐
+        │ callback           │
+        └────────────────────┘
+
+        Agora sim a Engine pode executar a função.
+
+        Resultado:
+
+        B
+
+    O Event Loop faz isso uma única vez?
+
+        Não.
+
+        Ele faz isso continuamente.
+
+        Durante toda a execução do programa ele fica verificando:
+
+        Call Stack está livre?
+
+        ↓
+
+        SIM
+
+        ↓
+
+        Existe callback esperando?
+
+        ↓
+
+        SIM
+
+        ↓
+
+        Move callback para a Call Stack
+
+        ↓
+
+        Repete tudo novamente
+
+        Esse ciclo acontece milhares de vezes por segundo.
+
+    O Event Loop nunca interrompe uma função
+
+        Esse é um detalhe muito importante.
+
+        Imagine:
+
+        function calculo() {
+            // demora 10 segundos
+        }
+
+        Enquanto calculo() estiver executando:
+
+        Call Stack
+
+        ┌──────────────────┐
+        │ calculo()        │
+        ├──────────────────┤
+        │ Global           │
+        └──────────────────┘
+
+        Mesmo que existam 50 callbacks esperando:
+
+        Callback Queue
+
+        A
+        B
+        C
+        D
+        E
+        ...
+
+        O Event Loop não pode interromper calculo().
+
+        Ele apenas espera.
+
+        Somente quando calculo() terminar é que poderá mover o primeiro callback.
+
+        Esse comportamento garante que uma função nunca seja interrompida no meio da execução.
+
+    O Event Loop executa callbacks?
+
+        Não.
+
+        Esse é outro erro bastante comum.
+
+        O Event Loop apenas faz isto:
+
+        Callback Queue
+            │
+            ▼
+        Call Stack
+
+        Quem executa o callback continua sendo a JavaScript Engine.
+
+    Por que isso torna o JavaScript "assíncrono"?
+
+        Na verdade, a linguagem JavaScript continua sendo single-threaded.
+
+        Quem faz o trabalho assíncrono são as Web APIs (no navegador) ou as APIs do Node.js.
+
+        O Event Loop apenas coordena quando essas operações terminadas podem voltar para a execução normal.
+
+        Por isso costuma-se dizer:
+
+        O JavaScript não é assíncrono por si só.
+
+        O Runtime é que fornece esse comportamento.
+
+    Fluxo completo
+
+        Agora podemos montar todo o caminho que uma operação assíncrona percorre.
+
+        Código JavaScript
+                │
+                ▼
+        JavaScript Engine
+                │
+                ▼
+        Call Stack
+                │
+                ▼
+        Operação assíncrona
+        (setTimeout, click, rede...)
+                │
+                ▼
+        Web API / Node API
+                │
+                ▼
+        Callback Queue
+                │
+                ▼
+        Event Loop
+                │
+                ▼
+        Call Stack
+                │
+                ▼
+        JavaScript Engine executa o callback
+
+        Essa figura resume praticamente todo o funcionamento do JavaScript assíncrono.
+
+    Uma observação importante
+
+        Para simplificar, durante toda a explicação falamos apenas da Callback Queue.
+
+        Na realidade, os motores modernos possuem mais de uma fila de tarefas.
+
+        Por exemplo:
+
+        Microtask Queue (usada por Promise, queueMicrotask, MutationObserver).
+        Task Queue ou Macrotask Queue (usada por `setTimeout`, eventos de clique, etc.).
+
+        O Event Loop possui regras de prioridade entre essas filas.
